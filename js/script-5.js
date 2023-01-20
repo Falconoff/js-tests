@@ -6,7 +6,7 @@ let hour = 12;
 let isWeekend = true;
 
 if (hour < 10 || hour > 18 || isWeekend) {
-  alert("Офис закрыт."); // это выходной
+  console.log("Офис закрыт."); // это выходной
 }
 
 // =========== И ==============
@@ -17,7 +17,7 @@ let hours = 12;
 let minutes = 30;
 
 if (hours == 12 && minutes == 30) {
-  alert("The time is 12:30");
+  console.log("The time is 12:30");
 }
 
 // =========== НЕ ==============
@@ -26,5 +26,5 @@ if (hours == 12 && minutes == 30) {
 
 // двойное НЕ !! используют для преобразования значений к логическому типу:
 
-alert(!!"non-empty string"); // true
-alert(!!null); // false
+console.log(!!"non-empty string"); // true
+console.log(!!null); // false
