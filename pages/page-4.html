@@ -59,6 +59,24 @@
       Возможность группировать case – это побочный эффект того, как switch/case
       работает без break.
     </p>
+    <div class="code">
+      <pre>
+        switch(x) {
+          case 'value1':  
+            ...
+            [break];
+
+          case 'value2':  
+          case 'value3': 
+            ...
+            [break];
+
+          default:
+            ...
+            [break]
+        }
+      </pre>
+    </div>
 
     <a href="../index.html">back to main page</a>
 
