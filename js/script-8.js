@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 /*
 let obj = {
@@ -31,16 +31,18 @@ console.log("111", obj[0]); // число ключа превращается в
 console.log("222", obj["0"]);
 */
 
-// =========================
+// ============= tests ============
+
+// --- 1 ---
+/*
 function isEmpty(obj) {
-  for (const key in obj) {
-    if (obj[key]) {
-      console.log(`${key} in obj is exist`);
-      return false;
-    }
-    console.log(`${key} in obj NOT exist`);
-    return true;
+  for (let key in obj) {
+    //  если тело цикла начнет выполняться - значит в объекте есть свойства
+    console.log(`key in obj is exist`);
+    return false;
   }
+  console.log(`key in obj NOT exist`);
+  return true;
 }
 
 let schedule = {};
@@ -50,3 +52,76 @@ console.log(isEmpty(schedule)); // true
 schedule["8:30"] = "Вставай";
 
 console.log(isEmpty(schedule)); // false
+*/
+
+// --- 2 ---
+// Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
+// Если объект salaries пуст, то результат должен быть 0.
+/*
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+};
+
+// let salaries = {};
+
+let sum = 0;
+
+for (const key in salaries) {
+  sum += salaries[key];
+}
+
+console.log("sum=", sum);
+*/
+
+// --- 3 ---
+// Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
+/*
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu",
+  qwe: "100",
+  asd: NaN,
+  assa: 0,
+  fsf: -1,
+  fsdf: false,
+};
+
+multiplyNumeric(menu);
+
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == "number") {
+      obj[key] *= 2;
+    }
+  }
+}
+
+console.table(menu);
+*/
+
+// Клонирование и объединение, Object.assign
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu",
+};
+
+let color = {
+  font: "blue",
+  headers: "red",
+};
+
+let font = {
+  size: "18px",
+  weight: "bold",
+  color: "green",
+};
+
+let test = {};
+
+Object.assign(test, menu, font, color);
+
+console.table(test);
