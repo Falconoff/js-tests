@@ -151,6 +151,7 @@ read() (читать) запрашивает два значения и сохр
 sum() (суммировать) возвращает сумму сохранённых значений.
 mul() (умножить) перемножает сохранённые значения и возвращает результат.*/
 
+/*
 let calculator = {
   read() {
     this.num1 = +prompt("Enter 1-st number", 0);
@@ -169,3 +170,77 @@ let calculator = {
 calculator.read();
 alert("sum=" + calculator.sum());
 alert("mul=" + calculator.mul());
+*/
+
+// ==================== Функции-конструкторы ======================
+
+/*
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+  this.isStudent = true;
+
+  this.sayHello = function (toWhom = "World") {
+    console.log(`Hello ${toWhom}! I'm ${this.name}`);
+  };
+}
+
+let user1 = new User("Mike", 20);
+let user2 = new User("Ann", 19);
+
+console.log(user1.name);
+console.log(user2.age);
+console.table(user1);
+
+user1.sayHello("to all");
+  */
+
+// ----------------------------------------
+/*Создайте функцию-конструктор Calculator, которая создаёт объекты с тремя методами:
+
+read() запрашивает два значения при помощи prompt и сохраняет их значение в свойствах объекта.
+sum() возвращает сумму этих свойств.
+mul() возвращает произведение этих свойств.*/
+/*
+function Calculator() {
+  this.read = function () {
+    this.num1 = +prompt("Enter 1-st number", 0);
+    this.num2 = +prompt("Enter 2-nd number", 0);
+  };
+
+  this.sum = function () {
+    return this.num1 + this.num2;
+  };
+
+  this.mul = function () {
+    return this.num1 * this.num2;
+  };
+}
+
+let calculator = new Calculator();
+calculator.read();
+
+alert("Sum=" + calculator.sum());
+alert("Mul=" + calculator.mul());
+*/
+
+// -------------------------------------------
+/* Создайте функцию-конструктор Accumulator(startingValue).
+Объект, который она создаёт, должен уметь следующее:
+Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
+Метод read() должен использовать prompt для считывания нового числа и прибавления его к value. */
+
+function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function () {
+    this.value += +prompt("Enter number", 0);
+  };
+}
+
+let accumulator = new Accumulator(1); // начальное значение 1
+
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+
+alert(accumulator.value); // выведет сумму этих значений
