@@ -103,10 +103,12 @@ console.table(menu);
 */
 
 // Клонирование и объединение, Object.assign
+/*
 let menu = {
   width: 200,
   height: 300,
   title: "My menu",
+  
 };
 
 let color = {
@@ -125,3 +127,45 @@ let test = {};
 Object.assign(test, menu, font, color);
 
 console.table(test);
+*/
+
+// ========== THIS ==========================
+
+/*
+let user = {
+  name: "Michael",
+  age: 29,
+  sex: "male",
+  sayHello(toWhom = "World") {
+    console.log(`Hello ${toWhom}! I'm ${this.name}`);
+  },
+};
+
+user.sayHello();
+user.sayHello("everybody");
+*/
+
+/*
+Создайте объект calculator (калькулятор) с тремя методами:
+read() (читать) запрашивает два значения и сохраняет их как свойства объекта.
+sum() (суммировать) возвращает сумму сохранённых значений.
+mul() (умножить) перемножает сохранённые значения и возвращает результат.*/
+
+let calculator = {
+  read() {
+    this.num1 = +prompt("Enter 1-st number", 0);
+    this.num2 = +prompt("Enter 2-nd number", 0);
+  },
+
+  sum() {
+    return this.num1 + this.num2;
+  },
+
+  mul() {
+    return this.num1 * this.num2;
+  },
+};
+
+calculator.read();
+alert("sum=" + calculator.sum());
+alert("mul=" + calculator.mul());
