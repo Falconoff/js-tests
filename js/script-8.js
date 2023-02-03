@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 /*
 let obj = {
@@ -230,6 +230,7 @@ alert("Mul=" + calculator.mul());
 Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
 Метод read() должен использовать prompt для считывания нового числа и прибавления его к value. */
 
+/*
 function Accumulator(startingValue) {
   this.value = startingValue;
 
@@ -244,3 +245,27 @@ accumulator.read(); // прибавляет введённое пользова�
 accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
 
 alert(accumulator.value); // выведет сумму этих значений
+*/
+
+// ============================================================
+
+let user = {
+  name: "Michael",
+  age: 29,
+  sex: "male",
+  sayHello(toWhom = "World") {
+    console.log(`Hello ${toWhom}! I'm ${this.name}`);
+  },
+  home: {
+    country: "USA",
+    city: "New York",
+    house: 7,
+  },
+};
+
+console.log(user.home.city); // New York
+console.log(user.home.street); // undefined
+// console.log(user.home.street.house); // Uncaught TypeError: Cannot read properties of undefined
+console.log(user.home.street?.house); // undefined
+user.sayHi(); // Uncaught TypeError: user.sayHi is not a function
+user.sayHi?.(); // ничего не произойдет (такого метода нет)

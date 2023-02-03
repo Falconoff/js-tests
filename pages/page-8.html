@@ -76,6 +76,22 @@
       будет сложнее отлаживать.
     </p>
 
+    <p>Синтаксис опциональной цепочки ?. имеет три формы:</p>
+    <ol>
+      <li>
+        obj?.prop – возвращает obj.prop если obj существует, в противном случае
+        undefined.
+      </li>
+      <li>
+        obj?.[prop] – возвращает obj[prop] если obj существует, в противном
+        случае undefined.
+      </li>
+      <li>
+        obj.method?.() – вызывает obj.method(), если obj.method существует, в
+        противном случае возвращает undefined.
+      </li>
+    </ol>
+
     <a href="../index.html">back to main page</a>
 
     <script src="../js/script-8.js"></script>
