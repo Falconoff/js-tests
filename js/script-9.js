@@ -132,3 +132,21 @@ console.log(parseFloat("12.3.4")); // 12.3, произойдёт останов�
 console.log(parseInt("0xff", 16)); // 255
 console.log(parseInt("ff", 16)); // 255, без 0x тоже работает
 console.log(parseInt("2n9c", 36)); // 123456
+
+// ========================= Задачи ==========================================
+console.log("================ Задачи ==================");
+// 1
+// let num1 = +prompt("Enter 1-st number", 0);
+// let num2 = +prompt("Enter 2-nd number", 0);
+let num1 = null;
+let num2 = null;
+
+do {
+  num1 = +prompt("Enter 1-st number", 0);
+} while (Number.isNaN(num1));
+
+do {
+  num2 = +prompt("Enter 2-nd number", 0);
+} while (Number.isNaN(num2));
+
+console.log("Sum=", num1 + num2);
