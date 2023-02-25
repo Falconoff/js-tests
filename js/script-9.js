@@ -25,26 +25,29 @@ console.log(a_16 == c_8); // true
 
 let num = 128;
 
-console.log(num.toString(16)); // 80
-console.log(num.toString(2)); // 10000000
+console.log(num.toString(16)); // "80"
+console.log(num.toString(2)); // "10000000"
 
-console.log((123456).toString(36)); // 2n9c
+console.log((123456).toString(36)); // "2n9c"
 
 // Округление
 
 console.log("=== Math.floor() ===");
+// Округление в меньшую сторону
 console.log(Math.floor(3.1)); // 3
 console.log(Math.floor(3.9)); // 3
 console.log(Math.floor(-3.1)); // -4
 console.log(Math.floor(-3.9)); // -4
 
 console.log("=== Math.ceil() ===");
+// Округление в большую сторону
 console.log(Math.ceil(3.1)); // 4
 console.log(Math.ceil(3.9)); // 4
 console.log(Math.ceil(-3.1)); // -3
 console.log(Math.ceil(-3.9)); // -3
 
 console.log("=== Math.round() ===");
+// Округление до ближайшего целого
 console.log(Math.round(3.4)); // 3
 console.log(Math.round(3.5)); // 4
 console.log(Math.round(-3.4)); // -3
@@ -52,6 +55,7 @@ console.log(Math.round(-3.5)); // -3 !!!???
 console.log(Math.round(-3.6)); // -4
 
 console.log("=== Math.trunc() ===");
+// Производит удаление дробной части без округления
 console.log(Math.trunc(3.1)); // 3
 console.log(Math.trunc(3.9)); // 3
 
@@ -71,18 +75,22 @@ console.log(1e400); // Infinity
 // ========= потеря точности ===========
 console.log("=== потеря точности ===");
 
-console.log("0.1 + 0.2 == 0.3", 0.1 + 0.2 == 0.3);
-console.log("0.1 + 0.2 =", 0.1 + 0.2);
+console.log("0.1 + 0.2 == 0.3", 0.1 + 0.2 == 0.3); // false
+console.log("0.1 + 0.2 =", 0.1 + 0.2); // 0.30000000000000004
 
 console.log(9999999999999999); //  10000000000000000
-console.log(0 === -0);
+console.log(0 === -0); // true
 
-// ====== Проверка: isFinite и isNaN ======
+// ====== Проверка на число: isFinite и isNaN ======
 console.log("=== Проверка: isFinite и isNaN ===");
 
 console.log(NaN == NaN); // false
 console.log(isNaN(NaN)); // true
 console.log(isNaN("str")); // true
+console.log(isNaN("123")); // false
+console.log(isNaN(123)); // false
+console.log(isNaN(Infinity)); // false
+console.log(isNaN(2e4)); // false
 
 console.log(isFinite("15")); // true
 console.log(isFinite(" ")); // true
@@ -90,7 +98,7 @@ console.log(isFinite("")); // true - пустая строка интерпре�
 console.log(isFinite("str")); // false, потому что специальное значение: NaN
 console.log(isFinite(Infinity)); // false, потому что специальное значение: Infinity
 
-// Методы Number.isNaN и Number.isFinite
+// Методы Number.isNaN и Number.isFinite более строгие!
 console.log("=== Методы Number.isNaN и Number.isFinite ===");
 
 console.log(Number.isNaN(NaN)); // true
