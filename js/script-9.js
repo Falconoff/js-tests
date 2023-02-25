@@ -101,9 +101,34 @@ console.log(isFinite(Infinity)); // false, потому что специаль�
 // Методы Number.isNaN и Number.isFinite более строгие!
 console.log("=== Методы Number.isNaN и Number.isFinite ===");
 
+// Number.isNaN(value) возвращает true только в том случае, если аргумент принадлежит к типу number и является NaN. Во всех остальных случаях возвращает false.
 console.log(Number.isNaN(NaN)); // true
 console.log(Number.isNaN("str")); // false
-console.log(Number.isFinite(123)); // true
+console.log(Number.isNaN("str" / 2)); // true
 
+// Number.isFinite(value) возвращает true только в том случае, если аргумент принадлежит к типу number и не является NaN/Infinity/-Infinity. Во всех остальных случаях возвращает false.
+console.log(Number.isFinite(123)); // true
 console.log(Number.isFinite("15")); // false, так как "15" является строкой, а не числом
 console.log(Number.isFinite(Infinity)); // false
+console.log(Number.isFinite()); // false
+console.log(Number.isFinite(NaN)); // false
+
+console.log(isFinite("15")); // true, так как isFinite сначала преобразует строку в число
+
+// ========= Сравнение Object.is ===================
+console.log("=== Сравнение Object.is ===");
+Object.is(NaN, NaN); // true
+Object.is(0, -0); // false
+Object.is("123", 123); // false
+
+// =========== parseInt и parseFloat ==================
+console.log(parseInt("100px")); // 100
+console.log(parseFloat("12.5em")); // 12.5
+
+console.log(parseInt("12.3")); // 12, вернётся только целая часть
+console.log(parseFloat("12.3.4")); // 12.3, произойдёт остановка чтения на второй точке
+
+// Второй аргумент parseInt(str, radix) определяет систему счисления
+console.log(parseInt("0xff", 16)); // 255
+console.log(parseInt("ff", 16)); // 255, без 0x тоже работает
+console.log(parseInt("2n9c", 36)); // 123456
