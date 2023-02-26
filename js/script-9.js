@@ -135,7 +135,8 @@ console.log(parseInt("2n9c", 36)); // 123456
 
 // ========================= Задачи ==========================================
 console.log("================ Задачи ==================");
-// 1
+// 1 - Создайте скрипт, который запрашивает ввод двух чисел (используйте prompt) и после показывает их сумму.
+/*
 // let num1 = +prompt("Enter 1-st number", 0);
 // let num2 = +prompt("Enter 2-nd number", 0);
 let num1 = null;
@@ -150,3 +151,42 @@ do {
 } while (Number.isNaN(num2));
 
 console.log("Sum=", num1 + num2);
+*/
+
+// 2 - Как правильно округлить 6.35?
+console.log((6.35).toFixed(1)); // 6.3
+console.log((6.35 + 0.0001).toFixed(1)); // 6.4
+console.log((6.35 * 10).toFixed(0) / 10); // 6.4
+console.log(Math.round(6.35 * 10) / 10); // 6.4
+
+// 3
+/*
+let num3 = null;
+
+function readNumber() {
+  let enteredValue;
+  do {
+    enteredValue = prompt("Enter number", "");
+
+    if (enteredValue === "" || enteredValue === " " || enteredValue === null) {
+      return null;
+    }
+  } while (Number.isNaN(+enteredValue));
+
+  return enteredValue;
+}
+
+console.log("rezult is", readNumber());
+*/
+
+// 4 - Напишите функцию random(min, max), которая генерирует случайное число с плавающей точкой от min до max (но не включая max).
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
+function setRandomInterval() {
+  let min = +prompt("Enter min", 0);
+  let max = +prompt("Enter max", 1);
+
+  return random(min, max);
+}
+console.log("result:", setRandomInterval());
