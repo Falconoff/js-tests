@@ -90,8 +90,29 @@ console.log(str.substr(-4, 2)); // gi, получаем 2 символа, нач
 
 console.log("a" > "Z"); // true
 
+// str.codePointAt(pos)
+// Возвращает код для символа, находящегося на позиции pos
 // одна и та же буква в нижнем и верхнем регистре будет иметь разные коды
 console.log("z".codePointAt(0)); // 122
 console.log("Z".codePointAt(0)); // 90
 
+// String.fromCodePoint(code)
+// Создаёт символ по его коду code
 console.log(String.fromCodePoint(90)); // Z
+
+// Вызов str.localeCompare(str2) возвращает число, которое показывает, какая строка больше в соответствии с правилами языка
+console.log("Österreich".localeCompare("Zealand")); // -1
+
+console.log("============== TASKS =============");
+
+// 1 - Напишите функцию ucFirst(str), возвращающую строку str с заглавным первым символом.
+// ucFirst("вася") == "Вася";
+function ucFirst(string) {
+  // Если строка пуста, str[0] вернёт undefined, а у undefined нет метода toUpperCase(), поэтому мы получим ошибку.
+  // Добавить проверку на пустую строку.
+  if (!string) return string;
+
+  return string[0].toUpperCase() + string.slice(1);
+}
+console.log(ucFirst("вася"));
+console.log(ucFirst("qwerty"));
