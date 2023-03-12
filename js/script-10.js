@@ -116,3 +116,23 @@ function ucFirst(string) {
 }
 console.log(ucFirst("вася"));
 console.log(ucFirst("qwerty"));
+
+// 2 Напишите функцию checkSpam(str), возвращающую true, если str содержит 'viagra' или 'XXX', а иначе false. Функция должна быть нечувствительна к регистру:
+
+function checkSpam(str) {
+  /*
+  let find_1 = "viagra";
+  let find_2 = "XXX";
+
+  return (
+    str.toLowerCase().includes(find_1) || str.toUpperCase().includes(find_2)
+  );
+  */
+
+  let lowerStr = str.toLowerCase();
+  return lowerStr.includes("viagra") || lowerStr.includes("xxx");
+}
+
+console.log(checkSpam("buy ViAgRA now")); // true
+console.log(checkSpam("free xxxxx")); // true
+console.log(checkSpam("innocent rabbit")); // false
