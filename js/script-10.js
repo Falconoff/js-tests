@@ -136,3 +136,20 @@ function checkSpam(str) {
 console.log(checkSpam("buy ViAgRA now")); // true
 console.log(checkSpam("free xxxxx")); // true
 console.log(checkSpam("innocent rabbit")); // false
+
+// 3 Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и, если она превосходит maxlength, заменяет конец str на "…", так, чтобы её длина стала равна maxlength.
+// Результатом функции должна быть та же строка, если усечение не требуется, либо, если необходимо, усечённая строка.
+
+function truncate(str, maxlength) {
+  // let newStr = str;
+  // if (str.length > maxlength) {
+  //   newStr = str.slice(0, maxlength - 1) + "...";
+  // }
+  // console.log(newStr);
+
+  return str.length > maxlength ? str.slice(0, maxlength - 1) + "..." : str;
+}
+
+console.log(truncate("123456789", 5));
+console.log(truncate("123456789", 3));
+console.log(truncate("123456789", 13));
