@@ -35,3 +35,14 @@ fruits.shift();
 console.log(fruits); // ['Апельсин', 'Груша', 'Лимон', empty × 2, 'Kiwi']
 fruits.unshift("Banana 1", "Banana 2");
 console.log(fruits); // ['Banana 1', 'Banana 2', 'Апельсин', 'Груша', 'Лимон', empty × 2, 'Kiwi']
+
+// ====== Matrix ======
+console.log("====== Matrix ======");
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(matrix); // [Array(3), Array(3), Array(3)]
+console.log(matrix[1][1]); // 5, центральный элемент
