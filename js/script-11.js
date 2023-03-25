@@ -99,10 +99,35 @@ console.log("====== Task 3 ======");
 - Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена».
 - Подсчитывает и возвращает сумму элементов массива.
 P.S. Ноль 0 – считается числом, не останавливайте ввод значений при вводе «0».*/
-let inputArray = [];
-let num;
-do {
-  num = +prompt("Pls, enter a number");
-  console.log("num=", num);
-  console.log(Number.isFinite(num));
-} while (Number.isFinite(num));
+function sumInput() {
+  let inputArray = [];
+
+  while (true) {
+    let enteredValue = prompt("Pls, enter a number");
+    console.log("enteredValue=", enteredValue);
+
+    if (
+      enteredValue == null ||
+      enteredValue.trim() == "" ||
+      !isFinite(+enteredValue)
+    )
+      break;
+
+    inputArray.push(+enteredValue);
+  }
+  console.log(inputArray);
+
+  let summ = 0;
+  for (const item of inputArray) {
+    summ += item;
+  }
+
+  return summ;
+}
+// console.log("Total=", sumInput());
+
+// 4
+console.log("====== Task 4 ======");
+// На входе массив чисел, например: arr = [1, -2, 3, 4, -9, 6].
+// Задача: найти непрерывный подмассив в arr, сумма элементов в котором максимальна.
+// Функция getMaxSubSum(arr) должна возвращать эту сумму.
