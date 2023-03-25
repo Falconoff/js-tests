@@ -46,3 +46,63 @@ let matrix = [
 
 console.log(matrix); // [Array(3), Array(3), Array(3)]
 console.log(matrix[1][1]); // 5, центральный элемент
+
+console.log("====== метод toString ======");
+console.log(fruits);
+console.log(String(fruits));
+console.log(fruits.toString() + 222);
+
+console.log(
+  "====== ====== ====== TASKS ====== ====== ====== ====== ====== ======  ",
+);
+
+// 2
+console.log("=== Task 2 ===");
+/*Давайте произведём 5 операций с массивом.
+1.Создайте массив styles с элементами «Джаз» и «Блюз».
+2.Добавьте «Рок-н-ролл» в конец.
+3.Замените значение в середине на «Классика». Ваш код для поиска значения в середине должен работать для массивов с любой длиной.
+4.Удалите первый элемент массива и покажите его.
+5.Вставьте Рэп и Регги в начало массива.*/
+let styles = ["Джаз", "Блюз"];
+styles.push("Рок-н-ролл");
+console.log(styles);
+let centerIndex = Math.floor(styles.length / 2);
+console.log("centerIndex=", centerIndex);
+styles[centerIndex] = "Классика";
+console.log(styles);
+console.log(styles.shift());
+console.log(styles);
+styles.unshift("Рэп", "Регги");
+console.log(styles);
+
+// 3
+console.log("====== Task 3 ======");
+
+let arr = ["a", "b", "c"];
+
+arr.push(function () {
+  console.log(this);
+});
+
+arr[3](); // a,b,function(){...}
+/*Вызов arr[3]() синтаксически – старый добрый obj[method](), в роли obj – arr, а в роли method – 3.
+Итак, у нас есть вызов функции arr[3] как метода объекта. Соответственно, он получает в качестве this объект arr и выводит массив ['a', 'b', 'c', ƒ]
+У массива в итоге 3 элемента: сначала их было 3, плюс функция.
+*/
+
+// 3
+console.log("====== Task 3 ======");
+/*Напишите функцию sumInput(), которая:
+
+- Просит пользователя ввести значения, используя prompt и сохраняет их в массив.
+- Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена».
+- Подсчитывает и возвращает сумму элементов массива.
+P.S. Ноль 0 – считается числом, не останавливайте ввод значений при вводе «0».*/
+let inputArray = [];
+let num;
+do {
+  num = +prompt("Pls, enter a number");
+  console.log("num=", num);
+  console.log(Number.isFinite(num));
+} while (Number.isFinite(num));
