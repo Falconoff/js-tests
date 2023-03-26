@@ -131,3 +131,55 @@ console.log("====== Task 4 ======");
 // На входе массив чисел, например: arr = [1, -2, 3, 4, -9, 6].
 // Задача: найти непрерывный подмассив в arr, сумма элементов в котором максимальна.
 // Функция getMaxSubSum(arr) должна возвращать эту сумму.
+// Если все элементы отрицательные – ничего не берём(подмассив пустой) и сумма равна «0»
+
+// ------- МЕДЛЕННОЕ РЕШЕНИЕ -------------
+/*Можно посчитать все возможные подсуммы.
+Самый простой путь – посчитать суммы подмассивов, начиная с каждого элемента по очереди.*/
+/*
+function getMaxSubSum(arr) {
+  console.log(arr);
+  let maxSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentItemSum = 0;
+
+    for (let j = i; j < arr.length; j++) {
+      currentItemSum += arr[j];
+      // if (currentItemSum > maxSum) {
+      //   maxSum = currentItemSum;
+      // }
+      // или аналогично:
+      maxSum = Math.max(maxSum, currentItemSum);
+    }
+  }
+  console.log("maxSum =", maxSum);
+  // return maxSum;
+}
+*/
+
+// ------- БЫСТРОДЕЙСТВУЮЩЕЕ РЕШЕНИЕ -------------
+/* Идём по массиву и накапливаем текущую частичную сумму элементов в переменной currentItemSum.
+Если currentItemSum в какой-то момент становится отрицательной – присваиваем currentItemSum=0.
+Максимальный из всех currentItemSum и будет ответом.*/
+function getMaxSubSum(arr) {
+  console.log(arr);
+  let maxSum = 0;
+  let currentItemSum = 0;
+
+  // для каждого элемента массива
+  for (const item of arr) {
+    currentItemSum += item; // добавляем значение элемента к partialSum
+    maxSum = Math.max(maxSum, currentItemSum); // запоминаем максимум на данный момент
+    if (currentItemSum < 0) currentItemSum = 0; // ноль, если отрицательное
+  }
+
+  console.log("maxSum =", maxSum);
+  // return maxSum;
+}
+getMaxSubSum([-1, 2, 3, -9]); // == 5 (сумма выделенных элементов)
+getMaxSubSum([2, -1, 2, 3, -9]); // == 6
+getMaxSubSum([-1, 2, 3, -9, 11]); // ==11
+getMaxSubSum([-2, -1, 1, 2]); // == 3
+getMaxSubSum([10, -9, 2, -3, 5]); // == 10
+getMaxSubSum([1, 2, 3]); // == 6 (берём все)
