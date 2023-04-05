@@ -1,5 +1,7 @@
 "use strict";
 
+console.log("============== splice, slice, concat ===================");
+
 // ============== splice ===================
 
 // arr.splice(start[, deleteCount, elem1, ..., elemN])
@@ -61,12 +63,15 @@ let copyArr = arr5.slice();
 console.log(copyArr == arr5);
 
 // ============== concat ===================
+console.log("============== concat ===================");
 let arr6 = [1, 2];
 let arr7 = [9, 0];
 
 console.log(arr6.concat([3, 4], [5, 6], 7, 8, arr7)); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
 // ============== forEach ==================
+console.log("============== forEach ===================");
+
 // Метод arr.forEach() позволяет запускать функцию для каждого элемента массива.
 
 // Вызов alert для каждого элемента
@@ -77,3 +82,79 @@ console.log(arr6.concat([3, 4], [5, 6], 7, 8, arr7)); // [1, 2, 3, 4, 5, 6, 7, 8
   console.log(`У ${item} индекс ${index} в [${array}]`);
 });
 // У Бильбо индекс 0 в [Бильбо,Гэндальф,Назгул] ...
+
+console.log("============== find ===================");
+
+let users = [
+  { id: 1, name: "Вася" },
+  { id: 2, name: "Петя" },
+  { id: 3, name: "Маша" },
+  { id: 4, name: "Вася" },
+];
+
+let user = users.find(item => item.id == 1);
+
+console.log(user.name); // Вася
+
+// Найти индекс первого Васи
+console.log(users.findIndex(user => user.name == "Вася")); // 0
+
+// Найти индекс последнего Васи
+console.log(users.findLastIndex(user => user.name == "Вася")); // 3
+
+// возвращает массив, состоящий из двух первых пользователей
+let someUsers = users.filter(item => item.id < 3);
+
+console.log(someUsers.length); // 2
+
+// Преобразование массива
+console.log("============== map ===================");
+
+let lengths = ["Бильбо", "Гэндальф", "Назгул"].map(item => item.length);
+console.log(lengths); // 6,8,6
+
+console.log("============== sort ===================");
+let arr = [1, -2, 15, 2, 0, 8];
+
+// Функция сравнения
+// arr.sort(function (a, b) {
+//   return a - b;
+// });
+
+// Лучше использовать стрелочные функции
+arr.sort((a, b) => a - b);
+
+console.log(arr); // [-2, 0, 1, 2, 8, 15]
+
+// Используйте localeCompare для строк
+let countries = ["Österreich", "Andorra", "Vietnam"];
+
+console.log(countries.sort((a, b) => (a > b ? 1 : -1))); // Andorra, Vietnam, Österreich (неправильно)
+
+console.log(countries.sort((a, b) => a.localeCompare(b))); // Andorra,Österreich,Vietnam (правильно!)
+
+console.log("============== split ===================");
+// разбивает строку на массив по заданному разделителю
+let names = "Вася, Петя, Маша";
+
+let arrOfNames = names.split(", ");
+
+console.log(arrOfNames);
+
+let str = "тест";
+
+console.log(str.split("")); // ['т', 'е', 'с', 'т']
+
+console.log("============== join ===================");
+
+// Вызов arr.join(glue) создаёт строку из элементов arr, вставляя glue между ними.
+let arrFriends = ["Вася", "Петя", "Маша"];
+
+let strFriends = arrFriends.join(";"); // объединить массив в строку через ;
+
+console.log(strFriends); // Вася;Петя;Маша
+
+let numArr = [5, 4, 3, 2, 1];
+console.log(numArr.join("-"));
+
+//
