@@ -133,6 +133,12 @@ console.log(countries.sort((a, b) => (a > b ? 1 : -1))); // Andorra, Vietnam, Ö
 
 console.log(countries.sort((a, b) => a.localeCompare(b))); // Andorra,Österreich,Vietnam (правильно!)
 
+console.log("============ reverse ================");
+let arrForReverse = [1, 2, 3, 4, 5];
+arrForReverse.reverse();
+
+console.log(arrForReverse); // 5,4,3,2,1
+
 console.log("============== split ===================");
 // разбивает строку на массив по заданному разделителю
 let names = "Вася, Петя, Маша";
@@ -157,4 +163,45 @@ console.log(strFriends); // Вася;Петя;Маша
 let numArr = [5, 4, 3, 2, 1];
 console.log(numArr.join("-"));
 
-//
+// reduce
+console.log("============== reduce ===================");
+// let value = arr.reduce(function(accumulator, item, index, array) {
+// ...
+// }, [initial]);
+let arrForReduce = [1, 2, 3, 4, 5];
+
+let result = arrForReduce.reduce((sum, current) => sum + current, 0);
+
+console.log(result); // 15
+
+console.log("============== Array.isArray ===================");
+// Array.isArray(value) - возвращает true, если value массив, и false, если нет.
+
+console.log(Array.isArray({})); // false
+console.log(Array.isArray([])); // true
+
+console.log("============== «thisArg» ===================");
+
+// «thisArg»
+let army = {
+  minAge: 18,
+  maxAge: 27,
+  canJoin(user) {
+    return user.age >= this.minAge && user.age < this.maxAge;
+  },
+};
+
+let usersAge = [
+  { age: 16 },
+  { age: 20 },
+  { age: 23 },
+  { age: 30 },
+  { age: 26 },
+];
+
+// найти пользователей, для которых army.canJoin возвращает true
+let soldiers = usersAge.filter(army.canJoin, army);
+
+console.log(soldiers.length); // 2
+console.log(soldiers[0].age); // 20
+console.log(soldiers); // 23
