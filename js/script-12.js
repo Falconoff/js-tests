@@ -204,3 +204,21 @@ let soldiers = usersAge.filter(army.canJoin, army);
 console.log(soldiers.length); // 2
 console.log(soldiers[0].age); // 20
 console.log(soldiers); // 23
+
+//
+// ================== TASKS ==================================
+//
+console.log(" ================ T A S K S ================= ");
+
+console.log(" ---------------- Task 1 ---------------- ");
+// Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
+// То есть дефисы удаляются, а все слова после них получают заглавную букву.
+
+function camelize(str) {
+  let arrSplitted = str.split("-");
+  console.log(arrSplitted);
+}
+
+camelize("background-color"); // "backgroundColor";
+camelize("list-style-image"); // "listStyleImage";
+camelize("-webkit-transition"); // "WebkitTransition";
