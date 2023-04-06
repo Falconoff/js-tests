@@ -242,6 +242,42 @@
     <p>возвращает true, если value массив, и false, если нет</p>
 
     <h2>Большинство методов поддерживают «thisArg»</h2>
+
+    <hr />
+
+    <h3>
+      Эти методы – самые используемые, их достаточно в 99% случаев. Но
+      существуют и другие:
+    </h3>
+
+    <ul>
+      <li>
+        <b>arr.some(fn)/arr.every(fn)</b> - проверяет массив. Функция fn
+        вызывается для каждого элемента массива аналогично map. Если
+        какие-либо/все результаты вызовов являются true, то метод возвращает
+        true, иначе false.
+      </li>
+      <li>
+        <b>arr.fill(value, start, end)</b> – заполняет массив повторяющимися
+        value, начиная с индекса start до end.
+      </li>
+      <li>
+        <b>arr.copyWithin(target, start, end)</b> – копирует свои элементы,
+        начиная с позиции start и заканчивая end, в себя, на позицию target
+        (перезаписывая существующие).
+      </li>
+      <li>
+        <b>arr.flat(depth)/arr.flatMap(fn)</b> - создаёт новый плоский массив из
+        многомерного массива.
+      </li>
+    </ul>
+    <p>
+      Полный список есть в
+      <a
+        href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array"
+        >справочнике MDN</a
+      >.
+    </p>
     <!-- <div class="code">
       <i>code <span class="comment"> // comments </span> </i><br />
     </div> -->

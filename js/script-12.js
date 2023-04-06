@@ -181,7 +181,6 @@ console.log(Array.isArray({})); // false
 console.log(Array.isArray([])); // true
 
 console.log("============== «thisArg» ===================");
-
 // «thisArg»
 let army = {
   minAge: 18,
