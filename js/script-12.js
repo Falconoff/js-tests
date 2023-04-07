@@ -271,3 +271,15 @@ console.log("source arr", arrayOfTask2);
 console.log(" ---------------- Task 3 ---------------- ");
 //Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
 // Функция должна изменять принимаемый массив и ничего не возвращать.
+
+filterRangeInPlace(arrayOfTask2, 3, 6);
+
+function filterRangeInPlace(arr, a, b) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < a || arr[i] > b) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+}
+console.log("3 - ", arrayOfTask2);
