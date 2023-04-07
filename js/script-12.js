@@ -214,11 +214,60 @@ console.log(" ---------------- Task 1 ---------------- ");
 // Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
 // То есть дефисы удаляются, а все слова после них получают заглавную букву.
 
+// моё решение --------------
+// function camelize(str) {
+//   let arrSplitted = str.split("-");
+//   console.log("1 - ", arrSplitted);
+//   let uppedArr = [];
+//   uppedArr[0] = arrSplitted[0];
+//   for (let i = 1; i < arrSplitted.length; i++) {
+//     uppedArr[i] = arrSplitted[i].at(0).toUpperCase() + arrSplitted[i].slice(1);
+//   }
+
+//   console.log(uppedArr.join(""));
+// }
+
+// короткое решение ++++++++++++
 function camelize(str) {
-  let arrSplitted = str.split("-");
-  console.log(arrSplitted);
+  console.log(
+    str
+      .split("-")
+      .map((item, index) =>
+        index == 0 ? item : item[0].toUpperCase() + item.slice(1),
+      )
+      .join(""),
+  );
 }
 
 camelize("background-color"); // "backgroundColor";
 camelize("list-style-image"); // "listStyleImage";
 camelize("-webkit-transition"); // "WebkitTransition";
+
+console.log(" ---------------- Task 2 ---------------- ");
+
+// Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше или равными b и возвращает результат в виде массива. Функция должна возвращать новый массив и не изменять исходный.
+//
+let arrayOfTask2 = [5, 3, 8, 1, 4, 7, 0, 2, 6];
+
+let filtered = filterRange(arrayOfTask2, 3, 6);
+
+function filterRange(arr, a, b) {
+  // моё решение --------------
+  // let newArr = [];
+  // arr.forEach(item => {
+  //   if (item >= a && item <= b) {
+  //     newArr.push(item);
+  //   }
+  // });
+  // return newArr;
+
+  // короткое решение ++++++++++++
+  return arr.filter(item => item >= a && item <= b);
+}
+
+console.log("filtered", filtered);
+console.log("source arr", arrayOfTask2);
+
+console.log(" ---------------- Task 3 ---------------- ");
+//Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+// Функция должна изменять принимаемый массив и ничего не возвращать.
