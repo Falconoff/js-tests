@@ -365,3 +365,39 @@ console.log(powerCalc.calculate("2 ** 3"));
 // -------------------------------------------------------
 
 console.log(" ---------------- Task 7 ---------------- ");
+
+// У вас есть массив объектов user, и в каждом из них есть user.name. Напишите код, который преобразует их в массив имён.
+
+let vasya7 = { name: "Вася", age: 25 };
+let petya7 = { name: "Петя", age: 30 };
+let masha7 = { name: "Маша", age: 28 };
+
+let users7 = [vasya7, petya7, masha7];
+
+let names7 = users7.map(item => item.name);
+
+console.log(names7); // Вася, Петя, Маша
+// -------------------------------------------------------
+
+console.log(" ---------------- Task 8 ---------------- ");
+// У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+// Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname.
+let vasya8 = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya8 = { name: "Петя", surname: "Иванов", id: 2 };
+let masha8 = { name: "Маша", surname: "Петрова", id: 3 };
+
+let users8 = [vasya8, petya8, masha8];
+
+let usersMapped = users8.map(user => ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id,
+}));
+console.log(usersMapped);
+/*
+usersMapped = [
+  { fullName: "Вася Пупкин", id: 1 },
+  { fullName: "Петя Иванов", id: 2 },
+  { fullName: "Маша Петрова", id: 3 }
+]
+*/
+// -------------------------------------------------------
