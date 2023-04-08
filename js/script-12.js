@@ -242,12 +242,13 @@ function camelize(str) {
 camelize("background-color"); // "backgroundColor";
 camelize("list-style-image"); // "listStyleImage";
 camelize("-webkit-transition"); // "WebkitTransition";
+// -------------------------------------------------------
 
 console.log(" ---------------- Task 2 ---------------- ");
 
 // Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше или равными b и возвращает результат в виде массива. Функция должна возвращать новый массив и не изменять исходный.
 //
-let arrayOfTask2 = [5, 3, 8, 1, 4, 7, 0, 2, 6];
+let arrayOfTask2 = [2, 5, 3, 8, 1, 4, 7, 0, 2, 6];
 
 let filtered = filterRange(arrayOfTask2, 3, 6);
 
@@ -267,6 +268,7 @@ function filterRange(arr, a, b) {
 
 console.log("filtered", filtered);
 console.log("source arr", arrayOfTask2);
+// -------------------------------------------------------
 
 console.log(" ---------------- Task 3 ---------------- ");
 //Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
@@ -276,10 +278,90 @@ filterRangeInPlace(arrayOfTask2, 3, 6);
 
 function filterRangeInPlace(arr, a, b) {
   for (let i = 0; i < arr.length; i++) {
+    // console.log("i", i);
+    // console.log("arr[i]", arr[i]);
     if (arr[i] < a || arr[i] > b) {
       arr.splice(i, 1);
-      i--;
+      i--; // т.к. элемент удалён, то на его место стал следующий и надо этот индекс в следующей итерации повторить
     }
+    // console.log("arr", arr);
   }
 }
 console.log("3 - ", arrayOfTask2);
+// -------------------------------------------------------
+
+console.log(" ---------------- Task 4 ---------------- ");
+
+// Сортировать в порядке по убыванию
+let arrayOfTask3 = [2, 5, -10, 3, 8, 1, 4, 7, 0, -2, 6];
+
+function sortDown(arr) {
+  return arr.sort((a, b) => b - a);
+}
+
+console.log("sorted arr:", sortDown(arrayOfTask3));
+// -------------------------------------------------------
+
+console.log(" ---------------- Task 5 ---------------- ");
+
+// У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+let arrOfStrings = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arrOfStrings);
+
+function copySorted(arr) {
+  return arr.slice().sort();
+}
+
+console.log("sorted arr", sorted);
+console.log("source arr", arrOfStrings);
+// -------------------------------------------------------
+
+console.log(" ---------------- Task 6 ---------------- ");
+
+// Создать расширяемый калькулятор
+// Во-первых, реализуйте метод calculate(str), который принимает строку типа "1 + 2" в формате «ЧИСЛО оператор ЧИСЛО» (разделено пробелами) и возвращает результат. Метод должен понимать плюс + и минус -.
+// Затем добавьте метод addMethod(name, func), который добавляет в калькулятор новые операции. Он принимает оператор name и функцию с двумя аргументами func(a,b), которая описывает его.
+// Числа и оператор разделены ровно одним пробелом.
+// Не лишним будет добавить обработку ошибок.
+
+function Calculator() {
+  // Обратите внимание, как хранятся методы. Они просто добавляются к внутреннему объекту.
+  this.methods = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+  };
+
+  // Все тесты и числовые преобразования выполняются в методе calculate.
+  this.calculate = function (str) {
+    let arrSplited = str.split(" ");
+    let a = Number(arrSplited[0]);
+    let b = Number(arrSplited[2]);
+    let op = arrSplited[1];
+
+    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+      return NaN;
+    }
+
+    return this.methods[op](a, b);
+  };
+
+  // добавляет в калькулятор новые операции
+  this.addMethod = function (name, func) {
+    this.methods[name] = func;
+  };
+}
+
+let calc = new Calculator();
+console.log(calc.calculate("3 + 7"));
+
+let powerCalc = new Calculator();
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+console.log(powerCalc.calculate("2 ** 3"));
+
+// -------------------------------------------------------
+
+console.log(" ---------------- Task 7 ---------------- ");
