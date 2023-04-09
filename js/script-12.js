@@ -432,3 +432,72 @@ function getAverageAge(users) {
 
 console.log("Average Age=", getAverageAge(arr9)); // Average Age= 25.25
 // -------------------------------------------------------
+
+console.log(" ---------------- Task 12 ---------------- ");
+// Оставить уникальные элементы массива
+// Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr.
+function unique(arr) {
+  let uniqueArr = [];
+
+  // for (let i = 0; i < arr.length; i += 1) {
+  //   if (!uniqueArr.includes(arr[i])) {
+  //     uniqueArr.push(arr[i]);
+  //   }
+  // }
+
+  for (let str of arr) {
+    if (!uniqueArr.includes(str)) {
+      uniqueArr.push(str);
+    }
+  }
+
+  return uniqueArr;
+}
+
+let strings = [
+  "кришна",
+  "кришна",
+  "харе",
+  "харе",
+  "харе",
+  "харе",
+  "кришна",
+  "кришна",
+  ":-O",
+];
+
+console.log(unique(strings)); // кришна, харе, :-O
+// -------------------------------------------------------
+
+console.log(" ---------------- Task 13 ---------------- ");
+// Создайте объект с ключами из массива
+// Допустим, мы получили массив пользователей в виде {id:..., name:..., age:... }.
+// Создайте функцию groupById(arr), которая создаст из него объект с id в качестве ключа и элементами массива в качестве значений.
+// В этой задаче мы предполагаем, что id уникален. Не может быть двух элементов массива с одинаковым id.
+// Используйте метод .reduce в решении.
+
+let users13 = [
+  { id: "john", name: "John Smith", age: 20 },
+  { id: "ann", name: "Ann Smith", age: 24 },
+  { id: "pete", name: "Pete Peterson", age: 31 },
+];
+
+function groupById(arr) {
+  return arr.reduce((accum, item) => {
+    accum[item.id] = item;
+    return accum;
+  }, {});
+}
+
+let usersById = groupById(users13);
+console.log(usersById);
+
+/*
+// после вызова у нас должно получиться:
+
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20},
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
