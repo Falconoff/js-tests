@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-tests</title>
+    <link rel="stylesheet" href="../css/styles-common.css" />
+    <!-- <link rel="stylesheet" href="../css/styles-5.css" /> -->
+  </head>
+  <body>
+    <h1>Map и Set</h1>
+
+    <p><b>Map</b> – коллекция пар ключ-значение.</p>
+
+    <p>Методы и свойства:</p>
+
+    <ul>
+      <li>
+        <b>new Map([iterable])</b> – создаёт коллекцию, можно указать
+        перебираемый объект (обычно массив) из пар <b>[ключ,значение]</b> для
+        инициализации.
+      </li>
+      <li>
+        <b>map.set(key, value)</b> – записывает по ключу <b>key</b> значение
+        <b>value</b>.
+      </li>
+      <li>
+        <b>map.get(key)</b> – возвращает значение по ключу или undefined, если
+        ключ key отсутствует.
+      </li>
+      <li>
+        <b>map.has(key)</b> – возвращает true, если ключ key присутствует в
+        коллекции, иначе false.
+      </li>
+      <li><b>map.delete(key)</b> – удаляет элемент по ключу key.</li>
+      <li><b>map.clear()</b> – очищает коллекцию от всех элементов.</li>
+      <li><b>map.size</b> – возвращает текущее количество элементов.</li>
+    </ul>
+
+    <p>Отличия от обычного объекта Object:</p>
+    <ul>
+      <li>Что угодно может быть ключом, в том числе и объекты.</li>
+      <li>Есть дополнительные методы, свойство size.</li>
+    </ul>
+
+    <p>
+      <b>Set</b> - коллекция уникальных значений, так называемое «множество».
+    </p>
+
+    <p>Методы и свойства:</p>
+    <ul>
+      <li>
+        <b>new Set(iterable)</b> – создаёт Set, можно указать перебираемый
+        объект со значениями для инициализации.
+      </li>
+      <li>
+        <b>set.add(value)</b> – добавляет значение (если оно уже есть, то ничего
+        не делает), возвращает тот же объект set.
+      </li>
+      <li>
+        <b>set.delete(value)</b> – удаляет значение, возвращает true если value
+        было в множестве на момент вызова, иначе false.
+      </li>
+      <li>
+        <b>set.has(value)</b> – возвращает true, если значение присутствует в
+        множестве, иначе false.
+      </li>
+      <li><b>set.clear()</b> – удаляет все имеющиеся значения.</li>
+      <li><b>set.size</b> – возвращает количество элементов в множестве.</li>
+    </ul>
+
+    <p>
+      Перебор <b>Map</b> и <b>Set</b> всегда осуществляется в порядке добавления
+      элементов, так что нельзя сказать, что это – неупорядоченные коллекции, но
+      поменять порядок элементов или получить элемент напрямую по его номеру
+      нельзя.
+    </p>
+    <!-- <div class="code">
+      <i>code <span class="comment"> // comments </span> </i><br />
+    </div> -->
+
+    <!-- <ul>
+      <li><b></b></li>
+      <li>
+        <b> </b>
+      </li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li>
+        <b></b>
+      </li>
+    </ul> -->
+
+    <a href="../index.html" class="back-btn">back to main page</a>
+
+    <script src="../js/script-14.js"></script>
+  </body>
+</html>
