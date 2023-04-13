@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-tests</title>
+    <link rel="stylesheet" href="../css/styles-common.css" />
+    <!-- <link rel="stylesheet" href="../css/styles-5.css" /> -->
+  </head>
+  <body>
+    <h1>Object.keys, values, entries</h1>
+
+    <p>Для простых объектов доступны следующие методы:</p>
+
+    <ul>
+      <li><b>Object.keys(obj)</b> – возвращает массив ключей.</li>
+      <li><b>Object.values(obj)</b> – возвращает массив значений.</li>
+      <li>
+        <b>Object.entries(obj)</b> – возвращает массив пар [ключ, значение].
+      </li>
+    </ul>
+
+    <div class="code">
+      <i>let user = { </i><br />
+      <i> name: "John", </i><br />
+      <i> age: 30 </i><br />
+      <i>}; </i><br />
+    </div>
+
+    <ul>
+      <li>Object.keys(user) = ["name", "age"]</li>
+      <li>Object.values(user) = ["John", 30]</li>
+      <li>Object.entries(user) = [ ["name","John"], ["age",30] ]</li>
+    </ul>
+
+    <h3>Трансформации объекта</h3>
+    <p>
+      У объектов нет множества методов, которые есть в массивах, например
+      <b>map, filter</b> и других. Если мы хотели бы их применить, то можно
+      использовать <b>Object.entries</b> с последующим вызовом
+      <b>Object.fromEntries</b>:
+    </p>
+    <ol>
+      <li>
+        Вызов <b>Object.entries(obj)</b> возвращает массив пар ключ/значение для
+        <b>obj</b>.
+      </li>
+      <li>На нём вызываем методы массива, например, <b>map</b>.</li>
+      <li>
+        Используем <b>Object.fromEntries(array)</b> на результате, чтобы
+        преобразовать его обратно в объект.
+      </li>
+    </ol>
+    <!-- <div class="code">
+      <i>code <span class="comment"> // comments </span> </i><br />
+    </div> -->
+
+    <!-- <ul>
+      <li><b></b></li>
+      <li>
+        <b> </b>
+      </li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li>
+        <b></b>
+      </li>
+    </ul> -->
+
+    <a href="../index.html" class="back-btn">back to main page</a>
+
+    <script src="../js/script-15.js"></script>
+  </body>
+</html>
