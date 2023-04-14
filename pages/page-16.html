@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-tests</title>
+    <link rel="stylesheet" href="../css/styles-common.css" />
+    <!-- <link rel="stylesheet" href="../css/styles-5.css" /> -->
+  </head>
+  <body>
+    <h1>Деструктурирующее присваивание</h1>
+
+    <p>
+      Деструктурирующее присваивание – это специальный синтаксис, который
+      позволяет нам «распаковать» массивы или объекты в несколько переменных,
+      так как иногда они более удобны.
+    </p>
+
+    <p>Полный синтаксис деструктурирующего присваивания для объекта:</p>
+
+    <div class="code">
+      <i>let {prop : varName = default, ...rest} = object</i><br />
+    </div>
+
+    <p>
+      Cвойство prop объекта object здесь должно быть присвоено переменной
+      varName. Если в объекте отсутствует такое свойство, переменной varName
+      присваивается значение по умолчанию. <br />
+      Свойства, которые не были упомянуты, копируются в объект rest.
+    </p>
+
+    <p>Полный синтаксис деструктурирующего присваивания для массива:</p>
+
+    <div class="code">
+      <i>let [item1 = default, item2, ...rest] = array</i><br />
+    </div>
+
+    <p>
+      Первый элемент отправляется в item1; второй отправляется в item2, все
+      остальные элементы попадают в массив rest.
+    </p>
+    <p>
+      Можно извлекать данные из вложенных объектов и массивов, для этого левая
+      сторона должна иметь ту же структуру, что и правая.
+    </p>
+    <!-- <div class="code">
+      <i>code <span class="comment"> // comments </span> </i><br />
+    </div> -->
+
+    <!-- <ul>
+      <li><b></b></li>
+      <li>
+        <b> </b>
+      </li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li>
+        <b></b>
+      </li>
+    </ul> -->
+
+    <a href="../index.html" class="back-btn">back to main page</a>
+
+    <script src="../js/script-16.js"></script>
+  </body>
+</html>
