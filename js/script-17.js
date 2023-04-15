@@ -51,3 +51,29 @@ console.log(".getMilliseconds()", myFirstBirthDay.getMilliseconds());
 console.log(".getUTCMilliseconds()", myFirstBirthDay.getUTCMilliseconds());
 console.log(".getTime()", myFirstBirthDay.getTime());
 console.log(".getTimezoneOffset()", myFirstBirthDay.getTimezoneOffset());
+
+// ========== Установка компонентов даты ===============
+
+console.log("========== Установка компонентов даты ===============");
+
+let today = new Date();
+
+console.log("today:", today);
+console.log("setFullYear:", today.setFullYear(2044, 0, 22));
+console.log("today:", today);
+console.log("setMonth:", today.setMonth(10));
+console.log("today:", today);
+console.log("setDate:", today.setDate(11));
+console.log("today:", today);
+console.log("setHours:", today.setHours(11, 22, 33, 44));
+console.log("today:", today);
+console.log("setMinutes:", today.setMinutes(0));
+console.log("today:", today);
+console.log("setSeconds:", today.setSeconds(55));
+console.log("today:", today);
+console.log("todayWeWereAttacked:", today.setTime(1645668000000));
+console.log("today:", today);
+// console.log("today:", today);
+// console.log("today:", today);
+// console.log("today:", today);
+// console.log("today:", today);
