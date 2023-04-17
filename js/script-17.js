@@ -138,3 +138,39 @@ console.log(date_2012_02_20);
 console.log("==================== Task 2 ====================");
 // Покажите день недели
 // Напишите функцию getWeekDay(date), показывающую день недели в коротком формате: «ПН», «ВТ», «СР», «ЧТ», «ПТ», «СБ», «ВС».
+let date_t2 = new Date(2012, 0, 3); // 3 января 2012 года
+
+function getWeekDay(date) {
+  let weekDays = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+
+  return weekDays[date.getDay()];
+}
+
+console.log(getWeekDay(date_t2)); // нужно вывести "ВТ"
+
+console.log("==================== Task 3 ====================");
+// День недели в европейской нумерации
+// В Европейских странах неделя начинается с понедельника (день номер 1), затем идёт вторник (номер 2) и так до воскресенья (номер 7). Напишите функцию getLocalDay(date), которая возвращает «европейский» день недели для даты date.
+
+let date_t3 = new Date(2012, 0, 3); // 3 января 2012 года
+
+function getLocalDay(date) {
+  const d = date.getDay();
+
+  return d === 0 ? 7 : d;
+}
+
+console.log(getLocalDay(date_t3)); // вторник, нужно показать 2
+
+console.log("==================== Task 4 ====================");
+// Какой день месяца был много дней назад?
+
+function getDateAgo(date, days) {
+  return date.getDate() - days;
+}
+
+let date_t4 = new Date(2015, 0, 2);
+
+console.log(getDateAgo(date_t4, 1));
+console.log(getDateAgo(date_t4, 2));
+console.log(getDateAgo(date_t4, 365));
