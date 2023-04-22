@@ -200,3 +200,38 @@ function getLastDayOfMonth(year, month) {
 
 console.log(getLastDayOfMonth(2012, 1)); // 29
 console.log(getLastDayOfMonth(2023, 3)); // 30
+
+console.log("==================== Task 6 ====================");
+
+// Сколько сегодня прошло секунд?
+// Напишите функцию getSecondsToday(), возвращающую количество секунд с начала сегодняшнего дня.
+
+function getSecondsToday() {
+  const timeNow = new Date();
+
+  // получаем объект из сегодняшней даты со временем начала 0:00:00
+  let todayBegan = new Date(
+    timeNow.getFullYear(),
+    timeNow.getMonth(),
+    timeNow.getDate(),
+  );
+
+  // можно так сделать, такое вычитание работает и без Timestamp
+  return Math.round((timeNow - todayBegan) / 1000);
+
+  // а всё это не нужно
+  // const todayBeganTimestamp = todayBegan.getTime();
+
+  // const timeNowTimestamp = timeNow.getTime();
+
+  // const secondsPast = Math.round(
+  //   (timeNowTimestamp - todayBeganTimestamp) / 1000,
+  // );
+
+  // console.log("seconds Past", secondsPast);
+  // console.log("hours Past", secondsPast / 3600);
+
+  // return secondsPast;
+}
+
+console.log("с начала сегодня прошло, сек:", getSecondsToday());
