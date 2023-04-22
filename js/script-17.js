@@ -217,6 +217,7 @@ function getSecondsToday() {
   );
 
   // можно так сделать, такое вычитание работает и без Timestamp
+  // вычитаем "время начала сегодня" из "время сейчас", делим на мс и округляем
   return Math.round((timeNow - todayBegan) / 1000);
 
   // а всё это не нужно
@@ -235,3 +236,24 @@ function getSecondsToday() {
 }
 
 console.log("с начала сегодня прошло, сек:", getSecondsToday());
+
+console.log("==================== Task 7 ====================");
+
+// Сколько секунд осталось до завтра?
+// Создайте функцию getSecondsToTomorrow(), возвращающую количество секунд до завтрашней даты.
+
+function getSecondsToTomorrow() {
+  const timeNow = new Date();
+
+  // полночь завтра
+  let tomorrowBeginning = new Date(
+    timeNow.getFullYear(),
+    timeNow.getMonth(),
+    timeNow.getDate() + 1,
+  );
+
+  // вычитаем из полночи "сейчас", делим на мс и округляем
+  return Math.round((tomorrowBeginning - timeNow) / 1000);
+}
+
+console.log("до завтра осталось, сек:", getSecondsToTomorrow());
