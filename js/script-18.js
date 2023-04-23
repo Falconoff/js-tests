@@ -159,17 +159,52 @@ console.log("========== Операция rest ===============");
 // Операция REST
 // Операция rest собирает все оставшиеся аргументы и поэтому должна идти последней в подписи функции, иначе будет ошибка.
 
-const add = function (...args) {
-  console.log(args); // массив всех аргументов
+const add = function (value, ...args) {
+  console.log("1st value:", value); // первый аргумент
+  console.log("other values:", args); // массив всех остальных аргументов
 };
 
-add(1, 2, 3);
-add(1, 2, 3, 4, 5);
+add(10, 1, 2, 3);
+add(15, 1, 2, 3, 4, 5);
 
-// const add = function (value, ...args) {
-//   console.log("1st value:", value); // первый аргумент
-//   console.log("other values:", args); // массив всех остальных аргументов
-// };
+console.log("========== Деструктуризация объектов ===============");
 
-// add(10, 1, 2, 3);
-// add(15, 1, 2, 3, 4, 5);
+// Деструктуризация объектов
+
+console.table(hotel);
+
+// Объявим переменные и присвоим им значения из объекта hotel:
+
+const {
+  name: hotelName, // можно переопределить имена в процессе присвоения
+  stars, // имя переменной и ключ объекта совпадают - происходит присваивание
+  capacity = 10, // значения по умолчанию, если такого свойства в объекте нет
+  status = "empty", // значения по умолчанию, если такого свойства в объекте нет
+  parking, // Если для переменной не нашлось подходящего ключа, то будет присвоен undefined
+} = hotel;
+
+console.log(hotelName); // Coastline Resort
+console.log(stars); // 4
+console.log(capacity); // 100
+console.log(status); // empty
+console.log(parking); // undefined
+
+console.log("========== Деструктуризация массивов ===============");
+
+// Деструктуризация массивов
+
+const rgb = [200, 100, 255];
+
+// Если переменных больше, чем элементов массива, им будет присвоено undefined, поэтому можно указывать значения по умолчанию.
+const [red, green, blue, alfa = 0.3] = rgb;
+
+console.log(`Red: ${red}, Green: ${green}, Blue: ${blue}, Alfa: ${alfa}`);
+// Red: 200, Green: 100, Blue: 255, Alfa: 0.3
+
+// Иногда из массива необходимо деструктуризировать только первые n элементов, а остальные сохранить в одну переменную в виде массива.
+const [firstColor, ...otherColors] = rgb;
+// firstColor: 200, otherColors: [100, 255]
+
+// Элементы можно пропускать.
+const [, , onlyBlue] = rgb;
+// onlyBlue: 255
