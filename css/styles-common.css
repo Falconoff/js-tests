@@ -77,8 +77,16 @@ img {
   font-style: normal;
 }
 
+.code .tab {
+  padding-left: 16px;
+}
+
 .code .comment {
   color: #676767;
   padding-left: 20px;
   font-style: italic;
+}
+
+li {
+  margin-bottom: 5px;
 }
