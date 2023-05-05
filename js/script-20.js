@@ -129,3 +129,5 @@ console.log(rounder2(1.234456));
 console.log(rounder3(1.234456));
 console.log(rounder2(34.765765));
 console.log(rounder3(34.765765));
+
+// Приватные свойства
