@@ -17,6 +17,21 @@
       другой ф-ции как аргумент
     </p>
 
+    <div class="code">
+      <i>const doMath = function (a, b, callback) {</i><br />
+      <i class="tab">const result = callback(a, b);</i><br />
+      <i class="tab">console.log(result);</i><br />
+      <i>}</i><br />
+    </div>
+    <div class="code">
+      <i>const add = function (x, y) {</i><br />
+      <i class="tab">return x + y;</i><br />
+      <i>}</i><br />
+    </div>
+    <div class="code">
+      <i>doMath(2, 3, add);</i><br />
+    </div>
+
     <h2>Closure</h2>
     <p>
       <b>Closure</b>
@@ -24,7 +39,31 @@
       всем локальным переменным (области видимости) родительской функции (той,
       из которой её вернули)
     </p>
-    <!--  -->
+    <div class="code">
+      <i>const makeSheff = function (name) {</i><br />
+      <i class="tab">const innerVar = "cooks";</i><br /><br />
+      <i class="tab">const makeDish = function (dish) {</i><br />
+      <i class="double-tab">console.log(`${name} ${innerVar} ${dish}`);</i><br />
+      <i class="tab">};</i><br /><br />
+      <i class="tab">return makeDish;</i><br />
+      <i>};</i><br />
+    </div><br />
+    <div class="code">
+      <i>const mango = makeSheff("Mango");<span class="comment"> // создаём повара Mango</span> </i><br />
+    </div><br />
+    <div class="code">
+      <i>mango("tea");<span class="comment"> // Mango cooks tea </span> </i><br />
+      <i>mango("coffee");<span class="comment"> // Mango cooks coffee </span> </i><br />
+    </div>
+
+    <h2>Стрелочные ф-ции</h2>
+
+    <h3>Синтаксис:</h3>
+    <ol>
+      <li>() => </li>
+      <li></li>
+      <li></li>
+    </ol>
 
     <!-- templates: -->
 

@@ -81,6 +81,10 @@ img {
   padding-left: 16px;
 }
 
+.code .double-tab {
+  padding-left: 32px;
+}
+
 .code .comment {
   color: #676767;
   padding-left: 20px;
