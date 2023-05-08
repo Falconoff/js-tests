@@ -85,6 +85,7 @@ img {
   padding-left: 32px;
 }
 
+.comment,
 .code .comment {
   color: #676767;
   padding-left: 20px;

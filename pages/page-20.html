@@ -1,78 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS-tests</title>
-    <link rel="stylesheet" href="../css/styles-common.css" />
-    <!-- <link rel="stylesheet" href="../css/styles-5.css" /> -->
-  </head>
-  <body>
-    <h1>Callbacks, Closures</h1>
 
-    <h2>Callback</h2>
-    <p>
-      <b>Callback</b> - функция обратного вызова - ф-ция, которая передаётся
-      другой ф-ции как аргумент
-    </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS-tests</title>
+  <link rel="stylesheet" href="../css/styles-common.css" />
+  <!-- <link rel="stylesheet" href="../css/styles-5.css" /> -->
+</head>
 
-    <div class="code">
-      <i>const doMath = function (a, b, callback) {</i><br />
-      <i class="tab">const result = callback(a, b);</i><br />
-      <i class="tab">console.log(result);</i><br />
-      <i>}</i><br />
-    </div>
-    <div class="code">
-      <i>const add = function (x, y) {</i><br />
-      <i class="tab">return x + y;</i><br />
-      <i>}</i><br />
-    </div>
-    <div class="code">
-      <i>doMath(2, 3, add);</i><br />
-    </div>
+<body>
+  <h1>Callbacks, Closures</h1>
 
-    <h2>Closure</h2>
-    <p>
-      <b>Closure</b>
-      - замыкание - Возвращаемая функция во время вызова будет иметь доступ ко
-      всем локальным переменным (области видимости) родительской функции (той,
-      из которой её вернули)
-    </p>
-    <div class="code">
-      <i>const makeSheff = function (name) {</i><br />
-      <i class="tab">const innerVar = "cooks";</i><br /><br />
-      <i class="tab">const makeDish = function (dish) {</i><br />
-      <i class="double-tab">console.log(`${name} ${innerVar} ${dish}`);</i><br />
-      <i class="tab">};</i><br /><br />
-      <i class="tab">return makeDish;</i><br />
-      <i>};</i><br />
-    </div><br />
-    <div class="code">
-      <i>const mango = makeSheff("Mango");<span class="comment"> // создаём повара Mango</span> </i><br />
-    </div><br />
-    <div class="code">
-      <i>mango("tea");<span class="comment"> // Mango cooks tea </span> </i><br />
-      <i>mango("coffee");<span class="comment"> // Mango cooks coffee </span> </i><br />
-    </div>
+  <h2>Callback</h2>
+  <p>
+    <b>Callback</b> - функция обратного вызова - ф-ция, которая передаётся
+    другой ф-ции как аргумент
+  </p>
 
-    <h2>Стрелочные ф-ции</h2>
+  <div class="code">
+    <i>const doMath = function (a, b, callback) {</i><br />
+    <i class="tab">const result = callback(a, b);</i><br />
+    <i class="tab">console.log(result);</i><br />
+    <i>}</i><br />
+  </div>
+  <div class="code">
+    <i>const add = function (x, y) {</i><br />
+    <i class="tab">return x + y;</i><br />
+    <i>}</i><br />
+  </div>
+  <div class="code">
+    <i>doMath(2, 3, add);</i><br />
+  </div>
 
-    <h3>Синтаксис:</h3>
-    <ol>
-      <li>() => </li>
-      <li></li>
-      <li></li>
-    </ol>
+  <h2>Closure</h2>
+  <p>
+    <b>Closure</b>
+    - замыкание - Возвращаемая функция во время вызова будет иметь доступ ко
+    всем локальным переменным (области видимости) родительской функции (той,
+    из которой её вернули)
+  </p>
+  <div class="code">
+    <i>const makeSheff = function (name) {</i><br />
+    <i class="tab">const innerVar = "cooks";</i><br /><br />
+    <i class="tab">const makeDish = function (dish) {</i><br />
+    <i class="double-tab">console.log(`${name} ${innerVar} ${dish}`);</i><br />
+    <i class="tab">};</i><br /><br />
+    <i class="tab">return makeDish;</i><br />
+    <i>};</i><br />
+  </div><br />
+  <div class="code">
+    <i>const mango = makeSheff("Mango");<span class="comment"> // создаём повара
+        Mango</span> </i><br />
+  </div><br />
+  <div class="code">
+    <i>mango("tea");<span class="comment"> // Mango cooks tea </span> </i><br />
+    <i>mango("coffee");<span class="comment"> // Mango cooks coffee </span>
+    </i><br />
+  </div>
 
-    <!-- templates: -->
+  <h2>Стрелочные ф-ции</h2>
 
-    <!-- <div class="code">
+  <h3>Синтаксис:</h3>
+  <ul>
+    <li>() => 5 <span class="comment"> // вернёт 5</span></li>
+    <li>a => a + 5 <span class="comment"> // вернёт результат вычисления (a +
+        5)</span></li>
+    <li>(a, b) => a + b <span class="comment"> // вернёт результат вычисления (a
+        + b)</span></li>
+    <li>(a, b) => { a + b; return 5} <span class="comment"> // синтаксис "явный
+        возврат", вернёт 5 </span></li>
+  </ul>
+
+  <p>У стрелочных ф-ций нет локальной переменной arguments для доступа ко всем
+    аргументам. Нужно использовать оператор rest (...)</p>
+
+
+  <!-- templates: -->
+
+  <!-- <div class="code">
       <i>code <span class="comment"> // comments </span> </i><br />
       <i class="tab">code <span class="comment"> // comments </span> </i><br />
     </div> -->
 
-    <!-- <ul>
+  <!-- <ul>
       <li><b></b></li>
       <li>
         <b> </b>
@@ -85,8 +97,9 @@
       </li>
     </ul> -->
 
-    <a href="../index.html" class="back-btn">back to main page</a>
+  <a href="../index.html" class="back-btn">back to main page</a>
 
-    <script src="../js/script-20.js"></script>
-  </body>
+  <script src="../js/script-20.js"></script>
+</body>
+
 </html>

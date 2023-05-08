@@ -132,41 +132,38 @@ console.log(rounder3(34.765765));
 
 // Приватные свойства
 
-
 console.log("========== Стрелочные ф-ции ===============");
 
 // Стрелочные ф-ции
 
-const funcOne = function(a,b,c) {
+const funcOne = function (a, b, c) {
   console.log(a, b, c);
   console.log(arguments);
 
-  return a+b+c;
-}
+  return a + b + c;
+};
 
 // явный возврат
 const funcArrow = (a, b, c) => {
   console.log(a, b, c);
-  return a+b+c;
-}
+  return a + b + c;
+};
 
 // неявный возврат
-const funcArrowSimple = (a, b, c) => a+b+c;
+const funcArrowSimple = (a, b, c) => a + b + c;
 
 // у стрелочных ф-ций нет локальной переменной arguments для доступа ко всем аргументам.
 // Нужно использовать оператор rest (...)
- 
-  const addArrow = (...args) => {
-       console.log(args);
-  }
 
-  console.log( addArrow(5,10,15) )
-  console.log( funcOne(5,10,15) )
+const addArrow = (...args) => {
+  console.log(args);
+};
 
+console.log(addArrow(5, 10, 15));
+console.log(funcOne(5, 10, 15));
 
 // чтоб из стрелочной ф-ции с неявным возвратом вернуть объект, нужно записать его в дополнительные (), означающие "выражение"
 
-  const arrowFnA = () => ({ a: 5, b: 7 })
+const arrowFnA = () => ({ a: 5, b: 7 });
 
-  console.log( arrowFnA() )
-
+console.log(arrowFnA());
