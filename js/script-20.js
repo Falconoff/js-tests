@@ -131,6 +131,30 @@ console.log(rounder2(34.765765));
 console.log(rounder3(34.765765));
 
 // Приватные свойства
+console.log("========== Приватные свойства ===============");
+
+const myLibraryFactory = function () {
+  // значение value невозможно достать - приватное свойство - только методом через замыкание функции
+  let value = 0;
+
+  // при вызове ф-ции myLibraryFactory получим объект с методами
+  return {
+    // ф-ции имеют доступ к value благодаря замыканию
+    add(num) {
+      value += num;
+    },
+    getValue() {
+      return value;
+    },
+  };
+};
+
+const myLib = myLibraryFactory();
+
+console.log(myLib);
+console.log(myLib.getValue());
+myLib.add(10);
+console.log(myLib.getValue());
 
 console.log("========== Стрелочные ф-ции ===============");
 
