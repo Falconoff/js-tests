@@ -78,3 +78,77 @@ user.showContext(); // this in showThis: {name: "Mango", showContext: ƒ}
 anotherUser.showContext = showThis;
 // контекст будет ссылаться на объект, частью которого является метод
 anotherUser.showContext(); // this in showThis:  {name: 'Poly', age: 19, showContext: ƒ}
+
+// =====================================================================================
+
+// =====================================================================================
+
+// =====================================================================================
+
+// =====================================================================================
+
+/*
+// this в callback-функциях
+
+// При передаче методов объекта как колбэк-функций, контекст не сохраняется. Колбэк это ссылка на метод, которая присваивается как значение параметра, вызываемого без объекта.
+
+const customer = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function makeMessage(callback) {
+  // callback() это вызов метода getFullName без объекта
+  console.log(`Обрабатываем заявку от ${callback()}.`);
+}
+
+makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+
+// Решение этой проблемы рассматривается в секции про метод bind() и методы объекта.
+*/
+
+// this в стрелочных функциях
+
+// Стрелочные функции не имеют своего this. В отличии от обычных функций, изменить значение this внутри стрелки после её объявления нельзя.
+// Контекст внутри стрелки определяется местом её объявления, а не вызова и ссылается на контекст родительской функции.
+/*
+const showThis = () => {
+  console.log("this in showThis: ", this);
+};
+
+showThis(); // this in showThis: window
+
+const user = {
+  username: "Mango",
+};
+user.showContext = showThis;
+
+user.showContext(); // this in showThis: window
+*/
+
+/*
+const hotel = {
+  username: "Resort hotel",
+  showThis() {
+    const foo = () => {
+      // Стрелки запоминают контекст во время объявления,
+      // из родительской области видимости
+      console.log("this in foo: ", this);
+    };
+
+    foo();
+    console.log("this in showThis: ", this);
+  },
+};
+
+hotel.showThis();
+// this in foo: {username: 'Resort hotel', showThis: ƒ}
+// this in showThis: {username: 'Resort hotel',showThis: ƒ}
+*/
+
+/**/
+
+/**/
