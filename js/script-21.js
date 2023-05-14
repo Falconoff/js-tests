@@ -185,3 +185,88 @@ hotel_2.showThis();
 /**/
 
 /**/
+
+// ================================== Методы функций =============================================
+
+// ===== Методы call() и apply() =======
+
+console.log("---------- Методы call() и apply() -----------");
+
+function greetGuest(greeting) {
+  console.log(`${greeting}, ${this.username}.`);
+}
+
+const mango = {
+  username: "Манго",
+};
+
+const poly = {
+  username: "Поли",
+};
+
+// Метод call вызовет функцию greetGuest так, что в this будет ссылка на объект mango, а также передаст аргумент "Добро пожаловать"
+
+greetGuest.call(mango, "Добро пожаловать"); // Добро пожаловать, Манго.
+greetGuest.call(poly, "С приездом"); // С приездом, Поли.
+
+// Метод apply - полный аналог метода call за исключением того, что синтаксис вызова аргументов требует не перечисление, а массив.
+// fn.apply(obj, [arg1, arg2, ...])
+
+greetGuest.apply(poly, ["Привет"]);
+
+// ----------------------------------
+
+const changeColor = function (color) {
+  this.color = color;
+};
+
+const hat = {
+  color: "black",
+};
+
+const sweater = {
+  color: "green",
+};
+
+console.log("hat", hat);
+console.log("sweater", sweater);
+
+changeColor.call(hat, "red");
+changeColor.call(sweater, "blue");
+
+console.log("hat", hat);
+console.log("sweater", sweater);
+
+// ===== Метод bind() =======
+
+console.log("---------- Метод bind() -----------");
+
+const changeHatColor = changeColor.bind(hat);
+const changeSweaterColor = changeColor.bind(sweater);
+
+changeHatColor("yellow");
+changeSweaterColor("pink");
+
+console.log("hat", hat);
+console.log("sweater", sweater);
+
+// bind() решает проблему потери контекста при передаче метода обьекта как колбека. Передаётся копия метода, которая навсегда привязана контекстом к объекту.
+
+const customerOne = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function makeMessage(callback) {
+  // callback() это вызов метода getFullName без объекта
+  console.log(`Обрабатываем заявку от ${callback()}.`);
+}
+
+// makeMessage(customerOne.getFullName); // Будет ошибка при вызове функции Cannot read properties of undefined
+
+// Метод bind используется для привязки контекста при передаче методов объекта как колбэк-функций. Передадим колбэком не оригинальный метод getFullName, а его копию с привязанным контекстом к объекту customer.
+
+makeMessage(customer.getFullName.bind(customer)); // "Обрабатываем заявку от Jacob Mercer."
