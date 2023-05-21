@@ -9,17 +9,18 @@ const objB = { y: 2 };
 const objC = { z: 3 };
 
 console.log("objA:", objA); // { x: 1 }
-console.dir(objB); // Object:
-// y: 2
-// [[Prototype]]: Object
+console.dir(objB);
+// Object:
+//   y: 2
+//   [[Prototype]]: Object
 
 console.log("objA.x:", objA.x); //  1
 console.log("objA.z:", objA.z); //  undefined
 // потому что св-ва z у объекта objA нет!
 
 //  пропишем цепочку прототипов:
-// objA.__proto__ = objB;
-// objB.__proto__ = objC;
+objA.__proto__ = objB;
+objB.__proto__ = objC;
 
 // теперь благодаря прототипному наследованию всё работает
 console.log("objA.z:", objA.z); //  3
@@ -29,13 +30,21 @@ objB.fn = function doSmth() {
   console.log(5);
 };
 
-// ... и посмотрим в консоли как отображается цепочка прототипов
-console.log("objA:", objA); // { x: 1 }
+// ... и посмотрим в консоли как отображается цепочка прототипов:
+console.log("objA:", objA);
+/*
+x:1
+[[Prototype]]: Object
+  fn: ƒ doSmth()
+  y:2
+  [[Prototype]]:Object
+*/
 
 // ------------------------------------------------
 
-console.log(objA.hasOwnProperty("x")); // true
-console.log(objA.hasOwnProperty("y")); // false
+// Метод объекта hasOwnProperty() проверяет является ли св-во собственным данного объекта
+console.log("is X own prop of ObjA ? -", objA.hasOwnProperty("x")); // true
+console.log("is Z own prop of ObjA ? -", objA.hasOwnProperty("z")); // false
 
 // ------------------------------------------------
 
@@ -70,12 +79,15 @@ console.log(objAA.kkk); // undefined
 console.log("---------------------------");
 // ------------------------------------------------
 
+// ------ Классы, Экземпляры. -------
+console.log("------ Классы, Экземпляры. -------");
+
 // Деструктуризируем объект настроек, значение по умолчанию будет undefined, если не пришёл объект, чтоб не было ошибки
 const Car = function ({ brand, model, price } = {}) {
-  // 2. Функция вызывается в контексте созданного объекта,
-  //     т.е. в this записывается ссылка на него
-
   // const {brand, model, price} = config;
+
+  // 2. Функция вызывается в контексте созданного объекта,
+  //    т.е. в this записывается ссылка на него
 
   this.brand = brand;
   this.model = model;
