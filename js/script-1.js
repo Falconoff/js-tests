@@ -26,6 +26,7 @@ console.log(Number.parseFloat("5px")); // 5
 console.log(Number.parseFloat("12qwe74")); // 12
 console.log(Number.parseFloat("12.46qwe79")); // 12.46
 console.log(Number.parseFloat("qweqwe")); // NaN
+console.log(Number.parseFloat("-777")); // NaN
 
 console.log("6" / "2"); // 3, строки преобразуются в числа
 
@@ -52,5 +53,33 @@ console.log(Boolean(0)); // false
 console.log(Boolean("false")); // true
 console.log(Boolean("")); // false
 console.log(Boolean(" ")); // true
+console.log(Boolean(-1)); // true
+console.log(Boolean(undefined)); // false
+
 // 0, null, undefined, NaN, "" - false
 // любое другое значение - true
+
+// ======= Конкатенация =======
+
+console.log("qwe" + true); // qwetrue
+console.log(true + "qwe"); // trueqwe
+console.log(true + true); // 2
+console.log(false + true); // 1
+console.log(false + false); // 0
+console.log(12 + false); // 12
+console.log(12 + true); // 13
+console.log(true + 12); // 13
+console.log([12, 13] + true); // 12,13true
+console.log(true + [12, 13]); // true12,13
+console.log([12, 13] + "true"); // 12,13true
+console.log("true" + [12, 13]); // true12,13
+console.log([] + true); // 12,13true
+console.log(true + []); // true12,13
+
+// ========== Шаблонная  строка ============
+console.warn("========== Шаблонная  строка ============");
+
+const userName = "Michael";
+const userAge = 25;
+
+console.log(`${userName} is ${userAge} years old`);

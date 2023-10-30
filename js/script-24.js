@@ -18,3 +18,16 @@ const flattenArray = function (arr) {
 flattenArray(arr);
 
 console.log(resultArr);
+
+// ====================
+console.log("=====================================");
+
+let shortArr = ["a", "b", "c"];
+console.log("shortArr lenght:", shortArr.length);
+
+shortArr[10] = "d";
+
+console.log("shortArr:", shortArr);
+console.log("shortArr lenght:", shortArr.length);
+console.log("shortArr[2]:", shortArr[2]);
+console.log("shortArr[3]:", shortArr[3]);

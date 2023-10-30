@@ -32,7 +32,7 @@ let string = "Widget with id";
 console.log(string.indexOf("Widget")); // 0, потому что подстрока 'Widget' найдена в начале
 console.log(string.indexOf("widget")); // -1, совпадений нет, поиск чувствителен к регистру
 console.log(string.indexOf("id")); // 1,
-console.log(str.indexOf("id", 2)); // 12
+console.log(str.indexOf("id", 2)); // 12 - поиск начался с позиции 2
 
 // Чтобы найти все вхождения подстроки, нужно запустить indexOf в цикле. Каждый раз, получив очередную позицию, начинаем новый поиск со следующей:
 // let strng = "Ослик Иа-Иа посмотрел на виадук";
