@@ -18,6 +18,10 @@ console.log("====== fruits.at() ======");
 console.log(fruits.at(1)); // Апельсин
 console.log(fruits.at(-1)); // Слива
 
+// last element of array
+console.log(fruits.at(-1)); // Слива
+console.log(fruits[fruits.length - 1]); // Слива
+
 // pop & push
 console.log("====== pop & push ======");
 
@@ -27,6 +31,7 @@ console.log(fruits); // ['Яблоко', 'Апельсин', 'Груша', 'Ли
 
 fruits.push("Kiwi");
 console.log(fruits); // ['Яблоко', 'Апельсин', 'Груша', 'Лимон', empty × 2, 'Kiwi']
+console.log(fruits.push("Banana"));
 
 // shift & unshift
 console.log("====== shift & unshift ======");
