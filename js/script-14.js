@@ -1,5 +1,40 @@
 "use strict";
 
+console.log("--- Map --- test---");
+
+let mapTest = new Map();
+
+mapTest.set("1", "str1"); // рядок як ключ
+mapTest.set(1, "num1"); // цифра як ключ
+mapTest.set(true, "bool1"); // булеве значення як ключ
+mapTest.set("qwe", 9876);
+
+//console.log(mapTest);
+//console.log(mapTest.get(1));
+
+// map.keys() – повертає об’єкт-ітератор для ключів
+console.log("--- map.keys()---");
+for (let item of mapTest.keys()) {
+  console.log(item);
+}
+
+// map.values() – повертає об’єкт-ітератор для значень
+console.log("--- map.values()---");
+for (let item of mapTest.values()) {
+  console.log(item);
+}
+
+// map.entries() – повертає об’єкт-ітератор зі значеннями виду [ключ, значення], цей варіант типово використовується з for..of.
+console.log("--- map.entries()---");
+for (let item of mapTest.entries()) {
+  console.log(item);
+}
+
+console.log("--- map.forEach( ()=>{} )---");
+mapTest.forEach((value, key) => {
+  console.log(`${key}:: ${value}`);
+});
+
 console.log(" ---------------- Task 1 ---------------- ");
 // Фильтрация уникальных элементов массива
 // Создайте функцию unique(arr), которая вернёт массив уникальных, не повторяющихся значений массива arr.
