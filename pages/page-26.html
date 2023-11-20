@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS-tests</title>
+  <link rel="stylesheet" href="../css/styles-common.css" />
+  <!-- <link rel="stylesheet" href="../css/styles-5.css" /> -->
+</head>
+
+<body>
+  <h1>setTimeout та setInterval</h1>
+
+  <p>
+    <a class="link-line"
+      href="https://uk.javascript.info/settimeout-setinterval" target="_blank"
+      rel="noopener noreferrer">https://uk.javascript.info/settimeout-setinterval</a>
+  </p>
+
+  <p>Ми можемо вирішити виконати функцію не зараз, а через певний час пізніше.
+    Це
+    називається “планування виклику”.
+
+    Для цього існує два методи:</p>
+
+  <ul>
+    <li>setTimeout дозволяє нам запускати функцію один раз через певний інтервал
+      часу.</li>
+    <li>setInterval дозволяє нам запускати функцію багаторазово, починаючи через
+      певний
+      інтервал часу, а потім постійно повторюючи у цьому інтервалі.</li>
+  </ul>
+
+  <h2>setTimeout</h2>
+  <div class="code">
+    <i>let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)
+    </i>
+  </div>
+
+  <p>Виклик setTimeout повертає “ідентифікатор таймера” timerId, який ми можемо
+    використовувати для скасування виконання clearTimeout(timerId):</p>
+  <div class="code">
+    <i>let timerId = setTimeout(...); <br /></i>
+    <i>clearTimeout(timerId); </i><br />
+  </div>
+
+  <h2>setInterval</h2>
+  <div class="code">
+    <i>let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
+    </i>
+  </div>
+
+  <p>Щоб припинити подальші виклики, нам слід викликати clearInterval(timerId).
+  </p>
+  <p>Наступний приклад буде відображати повідомлення кожнy 1 секундy. Через 5
+    секунд вивід припиняється:</p>
+  <div class="code">
+    <i>let timerId = setInterval(() => alert('тік'), 2000); </i><br />
+    <i>setTimeout(() => { clearInterval(timerId); alert('стоп'); },
+      5000); </i><br />
+  </div>
+
+  <p>Вкладені виклики setTimeout є більш гнучкою альтернативою setInterval, що
+    дозволяє нам більш точно встановити час між виконаннями.</p>
+
+  <!-- templates: -->
+
+  <!-- <div class="code">
+      <i>code <span class="comment"> // comments </span> </i><br />
+      <i class="tab">code <span class="comment"> // comments </span> </i><br />
+    </div> -->
+
+  <!-- <ul>
+      <li><b></b></li>
+      <li>
+        <b> </b>
+      </li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li><b></b></li>
+      <li>
+        <b></b>
+      </li>
+    </ul> -->
+
+  <a href="../index.html" class="back-btn">back to main page</a>
+
+  <script src="../js/script-26.js"></script>
+</body>
+
+</html>

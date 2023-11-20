@@ -9,6 +9,8 @@ function slow(x) {
 function cachingDecorator(func) {
   let cache = new Map();
 
+  console.log("cache:", cache);
+
   return function (x) {
     if (cache.has(x)) {
       // якщо такий ключ є в кеш
@@ -18,6 +20,8 @@ function cachingDecorator(func) {
     let result = func(x); // в іншому випадку викликати func
 
     cache.set(x, result); // і кешувати (запам’ятати) результат
+
+    console.log("result:", result);
     return result;
   };
 }
