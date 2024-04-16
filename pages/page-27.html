@@ -13,7 +13,7 @@
 <body>
   <h1>Практика: ссылки и события</h1>
 
-  <section class="section">
+  <section class="section-1">
 
     <h2 class="section__header">Заголовок</h2>
 
@@ -38,6 +38,54 @@
     <button class="change-btn" type="button">let's change</button>
   </section>
 
+  <hr>
+  <br>
+  <section class="section-2">
+
+    <form class="form">
+
+      <label>Name
+        <input class="js-input" type="text" name="user-name"
+          placeholder="Michael Jackson">
+      </label>
+      <label>Email
+        <input type="email" name="email" placeholder='user@mail.com'>
+      </label>
+      <div>
+
+        <label>Noob
+          <input type="radio" name="user-level" value="qwe">
+        </label>
+        <label>Middle
+          <input type="radio" name="user-level" value="qwe">
+        </label>
+        <label>Pro
+          <input type="radio" name="user-level" value="qwe">
+        </label>
+      </div>
+
+      <label>
+        <input class="js-license" type="checkbox" name="agree">I am
+        <span></span> and I agree
+      </label>
+
+      <br>
+
+      <button class="js-btn" type="submit" disabled>Submit</button>
+
+    </form>
+    <hr>
+
+    <h3>События клавиатуры: keypress, keydown, keyup</h3>
+
+    <ul>
+      <li><b>keydown, keyup</b> - реагируют на любую клавишу</li>
+      <li>
+        <b>keypress</b> - реагирует только на символьные клавиши
+      </li>
+    </ul>
+
+  </section>
 
 
   <!-- templates: -->
