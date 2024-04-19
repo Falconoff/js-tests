@@ -1,3 +1,4 @@
+// входной массив объектов с цветами
 const colors = [
   { hex: "#f44336", rgb: "244,67,54" },
   { hex: "#e91e63", rgb: "233,30,99" },
@@ -13,6 +14,8 @@ const colors = [
   { hex: "#795548", rgb: "121,85,72" },
   { hex: "#607d8b", rgb: "96,125,139" },
 ];
+
+// ------ создаём разметку (карточки колорпикера в html-документе) ------
 
 const paletteContainer =
   document.querySelector(".js-palette");
@@ -53,7 +56,7 @@ function createColorCardsMarkup(colors) {
 // --------------------
 // обрабатываем клик на цвет внутри карточки
 function onPaletteContainerClick(evt) {
-  // проверяем клик на цвете карточки
+  // проверяем клик на цветовом поле карточки
   const isColorSwatchEl =
     evt.target.classList.contains("color-swatch");
 
@@ -62,12 +65,19 @@ function onPaletteContainerClick(evt) {
   }
 
   const swatchEl = evt.target;
-  // ищем ссылку на карточку
+  // определяем ссылку на всю цветовую карточку:
+  // если это родительский элемент, то .parentNode
   // const parentColorCard = swatchEl.parentNode;
+  // если это несколько уровней вложенности, то .closest
   const parentColorCard = swatchEl.closest(".color-card");
 
+  // удаляем, если есть, активный класс с предыдущей карточки
   removeActiveCardClass();
+
+  // добавляем активный класс на текущую карточку
   addActiveCardClass(parentColorCard);
+
+  // окрашиваем фон страницы в выбранный цвет
   setBodyBgColor(swatchEl.dataset.hex);
 }
 
