@@ -8,6 +8,33 @@
   <title>JS-tests</title>
   <link rel="stylesheet" href="../css/styles-common.css" />
   <!-- <link rel="stylesheet" href="../css/styles-5.css" /> -->
+  <style>
+    .clockface {
+      margin-bottom: 15px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 40px;
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .timer-btn {
+      display: inline-flex;
+      margin-left: 4px;
+      margin-right: 4px;
+      text-transform: uppercase;
+      border: 0;
+      background-color: #3f51b5;
+      color: #ffffff;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 3px;
+    }
+
+    .timer-btn.is-active {
+      background-color: #2196f3;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,22 +42,18 @@
 
   <p>
     <a class="link-line"
-      href="https://uk.javascript.info/settimeout-setinterval" target="_blank"
-      rel="noopener noreferrer">https://uk.javascript.info/settimeout-setinterval</a>
+       href="https://uk.javascript.info/settimeout-setinterval" target="_blank"
+       rel="noopener noreferrer">https://uk.javascript.info/settimeout-setinterval</a>
   </p>
 
   <p>Ми можемо вирішити виконати функцію не зараз, а через певний час пізніше.
-    Це
-    називається “планування виклику”.
-
-    Для цього існує два методи:</p>
+    Це називається “планування виклику”. Для цього існує два методи:</p>
 
   <ul>
     <li>setTimeout дозволяє нам запускати функцію один раз через певний інтервал
       часу.</li>
     <li>setInterval дозволяє нам запускати функцію багаторазово, починаючи через
-      певний
-      інтервал часу, а потім постійно повторюючи у цьому інтервалі.</li>
+      певний інтервал часу, а потім постійно повторюючи у цьому інтервалі.</li>
   </ul>
 
   <h2>setTimeout</h2>
@@ -64,6 +87,17 @@
 
   <p>Вкладені виклики setTimeout є більш гнучкою альтернативою setInterval, що
     дозволяє нам більш точно встановити час між виконаннями.</p>
+
+  <h2>Timer</h2>
+
+  <div class="timer">
+    <p class="clockface js-clockface"></p>
+
+    <div class="actions">
+      <button class="timer-btn" data-action-start>Запустить</button>
+      <button class="timer-btn" data-action-stop>Остановить</button>
+    </div>
+  </div>
 
   <!-- templates: -->
 
