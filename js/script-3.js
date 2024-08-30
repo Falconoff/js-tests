@@ -1,5 +1,6 @@
 console.log("Я" > "А"); // true
-console.log("Коты" > "Кода"); // true
+console.log("Кот" > "Код"); // true
+console.log("Кот" > "код"); // false - регистр важен!
 console.log("Сонный" > "Сон"); // true
 
 console.log("2" > 1); // true, строка '2' становится числом 2

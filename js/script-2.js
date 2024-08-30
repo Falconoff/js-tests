@@ -19,6 +19,9 @@ console.log(2 + 2 + "1"); // будет "41", а не "221"
 
 console.log(6 - "2"); // 4, '2' приводится к числу
 console.log("6" / "2"); // 3, оба операнда приводятся к числам
+console.log(6 - true); // 5, true приводится к числу 1
+console.log(6 - "true"); // NaN, строка 'true' приводится к NaN
+console.log(6 / "true"); // делить на NaN можно - будет NaN
 
 // ======== унарный плюс + ========
 
@@ -55,6 +58,8 @@ console.log(b); // 1
 
 let counter3 = 1;
 console.log(2 * ++counter3); // 4
+console.log(counter3); // 2
 
 let counter4 = 1;
 console.log(2 * counter4++); // 2, потому что counter4++ возвращает "старое" значение
+console.log(counter4); // 2

@@ -45,16 +45,16 @@ while (k++ < 5) {
   console.log("k=", k); // 1, 2, 3, 4, 5
 }
 
-//
-// for (let i = 2; i <= 10; i++) {
-//   if (i % 2 == 0) console.log("even ", i);
-// }
+// 2, 4, 6, 8, 10
+for (let i = 2; i <= 10; i++) {
+  if (i % 2 == 0) console.log("even ", i);
+}
 
 //
 
 let m = 0;
 while (m++ < 3) {
-  console.log("m=", m);
+  console.log("m=", m); // 1, 2, 3
 }
 
 // =========== tasks ====================

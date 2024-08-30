@@ -6,13 +6,13 @@ const fetchPokemonById = id => {
   ).then(r => r.json());
 };
 
-fetchPokemonById(2)
+fetchPokemonById(22)
   .then(onFetchSuccess)
   .catch(onFetchError);
 
 function onFetchSuccess(pokemon) {
-  console.log("Success. I found Pokemon");
-  console.log("Pokemon:", pokemon);
+  // console.log("Success. I found Pokemon");
+  // console.log("Pokemon:", pokemon);
 }
 
 function onFetchError(error) {
@@ -20,6 +20,34 @@ function onFetchError(error) {
   console.log(error);
 }
 
+// ============== themoviedb ================
+
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTRjZWViMmYwYTcyNmI4OTg2ODE1ZjgzZTQyNTIwNSIsInN1YiI6IjYxODZmNDM0YzVjMWVmMDA4ODE2NTFjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.69us1fdEh7CUNzh6K7538_BkiVWh07ikbSoJ93Cy--s",
+  },
+};
+
+// "id": 967847, "Ghostbusters: Frozen Empire"
+
+fetch(
+  "https://api.themoviedb.org/3/search/movie?query=batman&page=1&api_key=c14ceeb2f0a726b8986815f83e425205&append_to_response=videos&language=ru",
+  options,
+)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+// fetch(
+//   "https://api.themoviedb.org/3/trending/movie/week",
+//   options,
+// )
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
 // =================== Horse race ===================
 
 const horses = [

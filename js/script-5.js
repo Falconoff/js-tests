@@ -44,7 +44,10 @@ console.log(!null); // true
 
 // двойное НЕ !! используют для преобразования значений к логическому типу:
 console.log(!!"non-empty string"); // true
+console.log(!!""); // false
 console.log(!!null); // false
+console.log(!!0); // false
+console.log(!!777); // true
 
 // =========== ?? - Оператор нулевого слияния ============
 

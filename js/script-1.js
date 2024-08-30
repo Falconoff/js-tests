@@ -10,10 +10,11 @@ console.log(typeof value); // string
 const valueA = "5";
 console.log(Number(valueA)); // 5
 console.log(typeof Number(valueA)); // 'number'
+console.log(typeof valueA); // 'string'
 
 const valueB = "random string";
 console.log(Number(valueB)); // NaN
-console.log(typeof Number(valueB)); // 'number'
+console.log(typeof Number(valueB)); // type of NaN is 'number'
 
 // Парсит из строки целое число
 console.log(Number.parseInt("5px")); // 5
@@ -73,8 +74,8 @@ console.log([12, 13] + true); // 12,13true
 console.log(true + [12, 13]); // true12,13
 console.log([12, 13] + "true"); // 12,13true
 console.log("true" + [12, 13]); // true12,13
-console.log([] + true); // 12,13true
-console.log(true + []); // true12,13
+console.log([] + true); // true
+console.log(true + []); // true
 
 // ========== Шаблонная  строка ============
 console.warn("========== Шаблонная  строка ============");
