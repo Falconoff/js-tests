@@ -19,11 +19,14 @@ console.log(from); // Аня
 function showCount(count) {
   // если count равен undefined или null, показать "неизвестно"
   console.log(count ?? "неизвестно");
+  1;
 }
 showCount(0); // 0
 showCount(null); // неизвестно
 showCount(); // неизвестно
-
+showCount(true); // true
+showCount(false); // false
+2;
 // ============== TESTS ============
 /* 
 function checkAge(age) {
@@ -60,4 +63,4 @@ function calcNum() {
   let num2 = prompt("Введите степень");
   return pow(num1, num2);
 }
-console.log(calcNum());
+// console.log(calcNum());

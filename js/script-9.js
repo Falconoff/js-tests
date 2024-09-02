@@ -69,6 +69,7 @@ console.log(num_2.toFixed(2)); // "1.23"
 
 console.log(+num_2.toFixed(2)); // 1.23
 console.log(Number(num_2.toFixed(2))); // 1.23
+console.log(parseFloat(num_2.toFixed(2))); // 1.23
 
 console.log(1e400); // Infinity
 
@@ -79,6 +80,7 @@ console.log("0.1 + 0.2 == 0.3", 0.1 + 0.2 == 0.3); // false
 console.log("0.1 + 0.2 =", 0.1 + 0.2); // 0.30000000000000004
 
 console.log(9999999999999999); //  10000000000000000
+console.log(0 == -0); // true
 console.log(0 === -0); // true
 
 // ====== Проверка на число: isFinite и isNaN ======
@@ -99,7 +101,9 @@ console.log(isFinite("str")); // false, потому что специально
 console.log(isFinite(Infinity)); // false, потому что специальное значение: Infinity
 
 // Методы Number.isNaN и Number.isFinite более строгие!
-console.log("=== Методы Number.isNaN и Number.isFinite ===");
+console.log(
+  "=== Методы Number.isNaN и Number.isFinite ===",
+);
 
 // Number.isNaN(value) возвращает true только в том случае, если аргумент принадлежит к типу number и является NaN. Во всех остальных случаях возвращает false.
 console.log(Number.isNaN(NaN)); // true
@@ -154,8 +158,8 @@ console.log("Sum=", num1 + num2);
 */
 
 // 2 - Как правильно округлить 6.35?
-console.log((6.35).toFixed(1)); // 6.3 !!!
-console.log((6.35 + 0.0001).toFixed(1)); // 6.4
+console.log((6.35).toFixed(1)); // "6.3" !!!
+console.log((6.35 + 0.0001).toFixed(1)); // "6.4"
 console.log((6.35 * 10).toFixed(0) / 10); // 6.4
 console.log(Math.round(6.35 * 10) / 10); // 6.4
 

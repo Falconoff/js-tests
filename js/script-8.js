@@ -27,14 +27,14 @@ console.warn("I find -", obj[find]);
 obj["sur" + find] = "Jackson";
 console.table(obj);
 
-console.log("111", obj[0]); // число ключа превращается в строку
-console.log("222", obj["0"]);
+console.log("111", obj[0]); // "zero" - число ключа превращается в строку
+console.log("222", obj["0"]); // "zero"
 */
 
 // ============= tests ============
 
 // --- 1 ---
-/*
+
 function isEmpty(obj) {
   for (let key in obj) {
     //  если тело цикла начнет выполняться - значит в объекте есть свойства
@@ -52,7 +52,6 @@ console.log(isEmpty(schedule)); // true
 schedule["8:30"] = "Вставай";
 
 console.log(isEmpty(schedule)); // false
-*/
 
 // --- 2 ---
 // Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
