@@ -1,6 +1,8 @@
 "use strict";
 
-console.log("============== splice, slice, concat ===================");
+console.log(
+  "============== splice, slice, concat ===================",
+);
 
 // ============== splice ===================
 
@@ -78,9 +80,11 @@ console.log("============== forEach ===================");
 // ["Бильбо", "Гэндальф", "Назгул"].forEach(alert);
 
 // А этот вдобавок расскажет и о позиции элемента в целевом массиве:
-["Бильбо", "Гэндальф", "Назгул"].forEach((item, index, array) => {
-  console.log(`У ${item} индекс ${index} в [${array}]`);
-});
+["Бильбо", "Гэндальф", "Назгул"].forEach(
+  (item, index, array) => {
+    console.log(`У ${item} индекс ${index} в [${array}]`);
+  },
+);
 // У Бильбо индекс 0 в [Бильбо,Гэндальф,Назгул] ...
 
 console.log("============== find ===================");
@@ -100,7 +104,9 @@ console.log(user.name); // Вася
 console.log(users.findIndex(user => user.name == "Вася")); // 0
 
 // Найти индекс последнего Васи
-console.log(users.findLastIndex(user => user.name == "Вася")); // 3
+console.log(
+  users.findLastIndex(user => user.name == "Вася"),
+); // 3
 
 // возвращает массив, состоящий из двух первых пользователей
 let someUsers = users.filter(item => item.id < 3);
@@ -110,7 +116,9 @@ console.log(someUsers.length); // 2
 // Преобразование массива
 console.log("============== map ===================");
 
-let lengths = ["Бильбо", "Гэндальф", "Назгул"].map(item => item.length);
+let lengths = ["Бильбо", "Гэндальф", "Назгул"].map(
+  item => item.length,
+);
 console.log(lengths); // 6,8,6
 
 console.log("============== sort ===================");
@@ -145,7 +153,7 @@ let names = "Вася, Петя, Маша";
 
 let arrOfNames = names.split(", ");
 
-console.log(arrOfNames);
+console.log(arrOfNames); //  ['Вася', 'Петя', 'Маша']
 
 let str = "тест";
 
@@ -161,7 +169,7 @@ let strFriends = arrFriends.join(";"); // объединить массив в �
 console.log(strFriends); // Вася;Петя;Маша
 
 let numArr = [5, 4, 3, 2, 1];
-console.log(numArr.join("-"));
+console.log(numArr.join("-")); // 5-4-3-2-1
 
 // reduce
 console.log("============== reduce ===================");
@@ -170,11 +178,16 @@ console.log("============== reduce ===================");
 // }, [initial]);
 let arrForReduce = [1, 2, 3, 4, 5];
 
-let result = arrForReduce.reduce((sum, current) => sum + current, 0);
+let result = arrForReduce.reduce(
+  (sum, current) => sum + current,
+  0,
+);
 
 console.log(result); // 15
 
-console.log("============== Array.isArray ===================");
+console.log(
+  "============== Array.isArray ===================",
+);
 // Array.isArray(value) - возвращает true, если value массив, и false, если нет.
 
 console.log(Array.isArray({})); // false
@@ -186,7 +199,9 @@ let army = {
   minAge: 18,
   maxAge: 27,
   canJoin(user) {
-    return user.age >= this.minAge && user.age < this.maxAge;
+    return (
+      user.age >= this.minAge && user.age < this.maxAge
+    );
   },
 };
 
@@ -208,7 +223,9 @@ console.log(soldiers); // 23
 //
 // ================== TASKS ==================================
 //
-console.log(" ================ T A S K S ================= ");
+console.log(
+  " ================ T A S K S ================= ",
+);
 
 console.log(" ---------------- Task 1 ---------------- ");
 // Переведите текст вида border-left-width в borderLeftWidth
@@ -234,7 +251,9 @@ function camelize(str) {
     str
       .split("-")
       .map((item, index) =>
-        index == 0 ? item : item[0].toUpperCase() + item.slice(1),
+        index == 0
+          ? item
+          : item[0].toUpperCase() + item.slice(1),
       )
       .join(""),
   );
@@ -427,7 +446,10 @@ console.log(" ---------------- Task 11 ---------------- ");
 // Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
 // Формула вычисления среднего арифметического значения: (age1 + age2 + ... + ageN) / N.
 function getAverageAge(users) {
-  return users.reduce((accum, user) => accum + user.age, 0) / users.length;
+  return (
+    users.reduce((accum, user) => accum + user.age, 0) /
+    users.length
+  );
 }
 
 console.log("Average Age=", getAverageAge(arr9)); // Average Age= 25.25

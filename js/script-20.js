@@ -102,7 +102,7 @@ const makeSheff = function (name) {
 
 const mango = makeSheff("Mango");
 
-// console.log(mango);
+console.log(mango);
 // console.dir(mango);
 
 mango("tea");
@@ -131,7 +131,9 @@ console.log(rounder2(34.765765));
 console.log(rounder3(34.765765));
 
 // Приватные свойства
-console.log("========== Приватные свойства ===============");
+console.log(
+  "========== Приватные свойства ===============",
+);
 
 const myLibraryFactory = function () {
   // значение value невозможно достать - приватное свойство - только методом через замыкание функции

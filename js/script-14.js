@@ -54,7 +54,7 @@ let values = [
   ":-O",
 ];
 
-console.log(unique(values)); // Hare,Krishna,:-O
+console.log(unique(values)); // ['Hare', 'Krishna', ':-O']
 
 console.log(" ---------------- Task 3 ---------------- ");
 // Перебираемые ключи
