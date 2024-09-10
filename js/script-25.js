@@ -28,8 +28,8 @@ function cachingDecorator(func) {
 
 slow = cachingDecorator(slow);
 
-console.log(slow(1)); // slow(1) is cached and the result returned
-console.log("Again: " + slow(1)); // slow(1) result returned from cache
+console.log(slow(1)); // 1 - slow(1) is cached and the result returned
+console.log("Again: " + slow(1)); // "Again: 1" - slow(1) result returned from cache
 
-console.log(slow(2)); // slow(2) is cached and the result returned
-console.log("Again: " + slow(2)); // slow(2) result returned from cache
+console.log(slow(2)); // 2 - slow(2) is cached and the result returned
+console.log("Again: " + slow(2)); // "Again: 2" - slow(2) result returned from cache

@@ -15,7 +15,9 @@ const Hotel = function (name, stars, capacity) {
 
   // Добавим метод в создаваемый объект. Например, пусть Hotel имеет методы для приветствия гостя
   this.greet = function (guestName) {
-    console.log(`Hello ${guestName}, wellcome to ${this.name}`);
+    console.log(
+      `Hello ${guestName}, wellcome to ${this.name}`,
+    );
   };
 
   // под капотом:
@@ -23,16 +25,15 @@ const Hotel = function (name, stars, capacity) {
 };
 
 // В результате вызова
-const hotel = new Hotel("Resort Hotel", 5, 100);
+const hotelResort = new Hotel("Resort Hotel", 5, 100);
 // Получаем такой объект
-console.log(hotel);
-// Hotel {name: "Resort Hotel", stars: 5, capacity: 100}
+console.log(hotelResort); // Hotel {name: "Resort Hotel", stars: 5, capacity: 100, greet: ƒ}
 
 const hotelGloria = new Hotel("Gloriya", 3, 200);
-console.log(hotelGloria);
+console.log(hotelGloria); // {name: 'Gloriya', stars: 3, capacity: 200, greet: ƒ}
 
 // вызовем приветствие для гостя Mango
-hotel.greet("Mango"); // Hello Mango, wellcome to Resort Hotel
+hotelResort.greet("Mango"); // Hello Mango, wellcome to Resort Hotel
 
 // ------------------------------------------------
 console.log("---------------------------");
@@ -56,8 +57,8 @@ console.log("mango.sales:", mango.sales); // 7
 
 const poly = new Manager("Poly", 10);
 console.log("poly.sales", poly.sales); // 10
-console.log(poly.sell("TV")); // Manager Poly sold TV
-console.log(poly.sell("Microwave")); // Manager Poly sold Microwave
+console.log(poly.sell("iPhone")); // Manager Poly sold iPhone
+console.log(poly.sell("catInTheBag")); // Manager Poly sold catInTheBag
 console.log("poly.sales", poly.sales); // 12
 
 console.log(poly);

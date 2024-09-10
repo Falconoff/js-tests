@@ -1,3 +1,4 @@
+// Задача - разровнять многомерный массив
 const arr = [
   1,
   2,
@@ -26,7 +27,7 @@ const flattenArray = function (arr) {
 
 flattenArray(arr);
 
-console.log(resultArr);
+console.log(resultArr); //  [1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 8, 9, 10, 11, 12]
 
 // ====================
 console.log("=====================================");
@@ -93,3 +94,4 @@ const recursive = (n, size) => {
 };
 
 console.log(recursive(2, 2));
+console.log(recursive(3, 3));

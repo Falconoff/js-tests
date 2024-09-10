@@ -2,10 +2,15 @@
 
 // console.log("========== Контекст исполнения (this) ===============");
 
-console.log("---------- this в глобальной области видимости -----------");
+console.log(
+  "---------- this в глобальной области видимости -----------",
+);
 
 function fn() {
-  console.log("this в глобальной области видимости -", this);
+  console.log(
+    "this в глобальной области видимости -",
+    this,
+  );
 }
 
 fn(); // window без "use strict" и undefined с "use strict"
@@ -19,13 +24,13 @@ const petya = {
   name: "Petya",
 
   showName() {
-    console.log(petya.name);
-    console.log(this.name);
+    console.log(petya.name); // "Petya"
+    console.log(this.name); // "Petya"
   },
 
   // Если функция была вызвана как метод объекта, то контекст будет ссылаться на объект, частью которого является метод.
   showThis() {
-    console.log(this);
+    console.log(this); // {name: 'Petya', showName: ƒ, showThis: ƒ}
   },
 };
 
@@ -64,7 +69,7 @@ function showThis() {
 }
 
 // Вызываем в глобальном контексте
-showThis(); // this in showThis: Window
+showThis(); // this in showThis: Window/undefined
 
 const user = {
   name: "Mango",
@@ -98,7 +103,9 @@ anotherUser.showContext(); // this in showThis:  {name: 'Poly', age: 19, showCon
 
 // ================ this в callback-функциях ============
 
-console.log("---------- this в функциях обратного вызова -----------");
+console.log(
+  "---------- this в функциях обратного вызова -----------",
+);
 
 const hotel = {
   name: "Resort Hotel",
@@ -110,13 +117,13 @@ const hotel = {
 const fnWithCallback = function (callback) {
   /*
    * Во время вызова fnWithCallback, callback будет ссылкой на функцию showThis объекта hotel.
-   * Ее вызов происходит в глобальном контексте, про hotel она ничего не знает.
+   * Bызов showThis происходит в глобальном контексте, про hotel она ничего не знает.
    * Соответственно this не будет ссылаться на hotel
    */
   callback();
 };
 
-// Передается ссылка на функцию а нее ее вызов
+// Передается ссылка на функцию, а нее ее вызов
 fnWithCallback(hotel.showThis); // window или undefined
 
 // -------------------------------------------------------------
@@ -144,7 +151,9 @@ function makeMessage(callback) {
 
 // this в стрелочных функциях
 
-console.log("---------- this в стрелочных функциях -----------");
+console.log(
+  "---------- this в стрелочных функциях -----------",
+);
 
 // Стрелочные функции не имеют своего this. В отличии от обычных функций, изменить значение this внутри стрелки после её объявления нельзя.
 // Контекст внутри стрелки определяется местом её объявления, а не вызова и ссылается на контекст родительской функции.
@@ -190,7 +199,9 @@ hotel_2.showThis();
 
 // ===== Методы call() и apply() =======
 
-console.log("---------- Методы call() и apply() -----------");
+console.log(
+  "---------- Методы call() и apply() -----------",
+);
 
 function greetGuest(greeting) {
   console.log(`${greeting}, ${this.username}.`);
@@ -228,14 +239,14 @@ const sweater = {
   color: "green",
 };
 
-console.log("hat", hat);
-console.log("sweater", sweater);
+console.log("hat", hat); // hat-{color: "black";}
+console.log("sweater", sweater); // sweater-{color: "green";}
 
 changeColor.call(hat, "red");
 changeColor.call(sweater, "blue");
 
-console.log("hat", hat);
-console.log("sweater", sweater);
+console.log("hat", hat); // hat-{color: "red";}
+console.log("sweater", sweater); // sweater-{color: "blue";}
 
 // ===== Метод bind() =======
 
@@ -269,4 +280,4 @@ function makeMessage(callback) {
 
 // Метод bind используется для привязки контекста при передаче методов объекта как колбэк-функций. Передадим колбэком не оригинальный метод getFullName, а его копию с привязанным контекстом к объекту customer.
 
-makeMessage(customer.getFullName.bind(customer)); // "Обрабатываем заявку от Jacob Mercer."
+makeMessage(customerOne.getFullName.bind(customerOne)); // "Обрабатываем заявку от Jacob Mercer."

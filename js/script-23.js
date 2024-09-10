@@ -2,7 +2,9 @@
 
 // console.log("==========  ===============");
 
-console.log("---------- Прототипное наследование -----------");
+console.log(
+  "---------- Прототипное наследование -----------",
+);
 
 const objA = { x: 1 };
 const objB = { y: 2 };
@@ -38,17 +40,27 @@ x:1
   fn: ƒ doSmth()
   y:2
   [[Prototype]]:Object
+    z:3
+    [[Prototype]]:Object
 */
 
 // ------------------------------------------------
 
 // Метод объекта hasOwnProperty() проверяет является ли св-во собственным данного объекта
-console.log("is X own prop of ObjA ? -", objA.hasOwnProperty("x")); // true
-console.log("is Z own prop of ObjA ? -", objA.hasOwnProperty("z")); // false
+console.log(
+  "is X own prop of ObjA ? -",
+  objA.hasOwnProperty("x"),
+); // true
+console.log(
+  "is Z own prop of ObjA ? -",
+  objA.hasOwnProperty("z"),
+); // false
 
 // ------------------------------------------------
 
-console.log("---------- !!! Правильное прототипное наследование -----------");
+console.log(
+  "---------- !!! Правильное прототипное наследование -----------",
+);
 
 // !!! Цепочка прототипов строится с конца (с самого главного объекта)
 
@@ -64,14 +76,14 @@ console.log(objBB.c); // 6
 const objAA = Object.create(objBB);
 objAA.a = 4;
 
-console.log(objAA);
-console.log(objAA.c);
+console.log(objAA); // {a: 4}
+console.log(objAA.c); // 6
 
 // Если найденное у прототипа св-во перезаписать, то оно становится собственным св-вом объекта, а у прототипа значение этого св-ва не меняется.
 objAA.c = 100;
 
-console.log(objAA.c);
-console.log(objAA);
+console.log(objAA.c); // 100
+console.log(objAA); // {a: 4, c: 100}
 
 console.log(objAA.kkk); // undefined
 // При вызове несуществующего св-ва возвращается undefined не потому, что этого св-ва нет в данном объекте, а его нет во всей цепочке прототипов
@@ -114,14 +126,14 @@ const myCar = new Car({
   model: "Q3",
   price: 35000,
 });
-console.log(myCar);
+console.log(myCar); // {brand: 'Audi', model: 'Q3', price: 35000, changePrice: ƒ}
 
 const myCar2 = new Car({
   brand: "BMW",
   model: "X6",
   price: 50000,
 });
-console.log(myCar2);
+console.log(myCar2); //  {brand: 'BMW', model: 'X6', price: 50000, changePrice: ƒ}
 
 // ============================================
 
