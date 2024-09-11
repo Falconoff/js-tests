@@ -14,7 +14,7 @@ const sectionHeader = document.querySelector(
 );
 
 // console.log(navListEl);
-// console.log(firstNavItemEl);
+console.log(firstNavItemEl);
 // console.log(lastNavItemEl);
 
 const newMessage = document.createElement("p");
@@ -29,7 +29,7 @@ const newListItem = `<li class="nav__item"><a class="nav__link" href="">${textFo
 const onChangeBtnClick = function () {
   console.log("click on Change Btn");
   sectionHeader.textContent = "Изменился заголовок";
-  sectionHeader.style.color = "brown";
+  sectionHeader.style.color = "gold";
 
   firstNavItemEl.style.color = "yellow";
   firstNavLink.style.color = "green";

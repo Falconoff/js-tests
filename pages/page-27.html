@@ -46,7 +46,7 @@
 
       <label>Name
         <input class="js-input" type="text" name="user-name"
-          placeholder="Michael Jackson">
+               placeholder="Michael Jackson">
       </label>
       <label>Email
         <input type="email" name="email" placeholder='user@mail.com'>
@@ -54,13 +54,13 @@
       <div>
 
         <label>Noob
-          <input type="radio" name="user-level" value="qwe">
+          <input type="radio" name="user-level" value="noob">
         </label>
         <label>Middle
-          <input type="radio" name="user-level" value="qwe">
+          <input type="radio" name="user-level" value="middle">
         </label>
         <label>Pro
-          <input type="radio" name="user-level" value="qwe">
+          <input type="radio" name="user-level" value="professional">
         </label>
       </div>
 
@@ -82,6 +82,18 @@
       <li><b>keydown, keyup</b> - реагируют на любую клавишу</li>
       <li>
         <b>keypress</b> - реагирует только на символьные клавиши
+      </li>
+    </ul>
+    <ul>
+      <li><b>KeyboardEvent.key</b> доступно для чтения и возвращает значение
+        клавиши, нажатой пользователем, принимая во внимание состояние клавиш
+        модификаторов, таких как shiftKey, а так же текущий язык и модель
+        клавиатуры.</li>
+      <li>
+        <b>KeyboardEvent.code</b> представляет собой физическую клавишу на
+        клавиатуре (в отличие от символа, сгенерированного нажатием клавиши).
+        Другими словами, это свойство возвращает значение, которое не изменяется
+        с помощью раскладки клавиатуры или состояния клавиш-модификаторов.
       </li>
     </ul>
 
